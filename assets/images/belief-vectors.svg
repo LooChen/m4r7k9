@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 520" width="780" height="520" font-family="Georgia, 'EB Garamond', serif">
+
+  <rect width="780" height="520" fill="#FAFAF8"/>
+
+  <text x="155" y="64" text-anchor="middle" font-size="10" fill="#5A8A5A" letter-spacing="0.10em">POSITIVE</text>
+  <text x="155" y="456" text-anchor="middle" font-size="10" fill="#B85450" letter-spacing="0.10em">NEGATIVE</text>
+  <text x="625" y="64" text-anchor="middle" font-size="10" fill="#5A8A5A" letter-spacing="0.10em">POSITIVE</text>
+  <text x="625" y="456" text-anchor="middle" font-size="10" fill="#B85450" letter-spacing="0.10em">NEGATIVE</text>
+
+  <line x1="272" y1="260" x2="195" y2="260" stroke="#C8C0B0" stroke-width="1.5"/>
+  <line x1="508" y1="260" x2="585" y2="260" stroke="#C8C0B0" stroke-width="1.5"/>
+
+  <circle cx="390" cy="260" r="52" fill="#F0EDE6" stroke="#C8C0B0" stroke-width="1.5"/>
+  <text x="390" y="254" text-anchor="middle" font-size="11" fill="#6B6357" letter-spacing="0.06em">BELIEF</text>
+  <text x="390" y="272" text-anchor="middle" font-size="10" fill="#9A9080" font-style="italic">"I must be capable"</text>
+
+  <circle cx="155" cy="260" r="40" fill="#F5F3F0" stroke="#C8C0B0" stroke-width="1.2"/>
+  <text x="155" y="254" text-anchor="middle" font-size="10" fill="#6B6357" letter-spacing="0.04em">INTERNAL</text>
+  <text x="155" y="269" text-anchor="middle" font-size="10" fill="#9A9080">RESPONSE</text>
+
+  <line x1="136" y1="222" x2="96" y2="138" stroke="#5A8A5A" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="96,138 88,158 108,152" fill="#5A8A5A"/>
+  <text x="72" y="128" text-anchor="middle" font-size="12" fill="#5A8A5A">Pride</text>
+
+  <line x1="155" y1="220" x2="155" y2="145" stroke="#5A8A5A" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="155,145 148,162 162,162" fill="#5A8A5A"/>
+  <text x="155" y="134" text-anchor="middle" font-size="12" fill="#5A8A5A">Confidence</text>
+
+  <line x1="174" y1="225" x2="206" y2="163" stroke="#5A8A5A" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="206,163 196,180 212,178" fill="#5A8A5A"/>
+  <text x="226" y="154" text-anchor="middle" font-size="11" fill="#7A9A7A" font-style="italic">Calm</text>
+
+  <line x1="136" y1="298" x2="96" y2="382" stroke="#B85450" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="96,382 88,362 108,368" fill="#B85450"/>
+  <text x="72" y="400" text-anchor="middle" font-size="12" fill="#B85450">Shame</text>
+
+  <line x1="155" y1="300" x2="155" y2="375" stroke="#B85450" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="155,375 148,358 162,358" fill="#B85450"/>
+  <text x="155" y="392" text-anchor="middle" font-size="12" fill="#B85450">Anxiety</text>
+
+  <line x1="174" y1="295" x2="206" y2="357" stroke="#B85450" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="206,357 196,340 212,342" fill="#B85450"/>
+  <text x="228" y="370" text-anchor="middle" font-size="11" fill="#C07470" font-style="italic">Resentment</text>
+
+  <circle cx="625" cy="260" r="40" fill="#F5F3F0" stroke="#C8C0B0" stroke-width="1.2"/>
+  <text x="625" y="254" text-anchor="middle" font-size="10" fill="#6B6357" letter-spacing="0.04em">EXTERNAL</text>
+  <text x="625" y="269" text-anchor="middle" font-size="10" fill="#9A9080">JUDGMENT</text>
+
+  <line x1="606" y1="222" x2="566" y2="138" stroke="#5A8A5A" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="566,138 558,158 578,152" fill="#5A8A5A"/>
+  <text x="542" y="128" text-anchor="middle" font-size="12" fill="#5A8A5A">Admiration</text>
+
+  <line x1="625" y1="220" x2="625" y2="145" stroke="#5A8A5A" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="625,145 618,162 632,162" fill="#5A8A5A"/>
+  <text x="625" y="134" text-anchor="middle" font-size="12" fill="#5A8A5A">Respect</text>
+
+  <line x1="644" y1="225" x2="676" y2="163" stroke="#5A8A5A" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="676,163 666,180 682,178" fill="#5A8A5A"/>
+  <text x="698" y="154" text-anchor="middle" font-size="11" fill="#7A9A7A" font-style="italic">Affection</text>
+
+  <line x1="606" y1="298" x2="566" y2="382" stroke="#B85450" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="566,382 558,362 578,368" fill="#B85450"/>
+  <text x="540" y="400" text-anchor="middle" font-size="12" fill="#B85450">Disapproval</text>
+
+  <line x1="625" y1="300" x2="625" y2="375" stroke="#B85450" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="625,375 618,358 632,358" fill="#B85450"/>
+  <text x="625" y="392" text-anchor="middle" font-size="12" fill="#B85450">Contempt</text>
+
+  <line x1="644" y1="295" x2="676" y2="357" stroke="#B85450" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="676,357 666,340 682,342" fill="#B85450"/>
+  <text x="700" y="370" text-anchor="middle" font-size="11" fill="#C07470" font-style="italic">Disgust</text>
+
+  <text x="390" y="492" text-anchor="middle" font-size="11.5" fill="#9A9080" font-style="italic">Vector length reflects belief strength. Stronger beliefs produce larger swings in both directions.</text>
+
+</svg>
