@@ -14,6 +14,7 @@
   --accent:     #7A6A52;
   --positive:   #5A8A5A;
   --negative:   #B85450;
+  --sidebar-w:  240px;
 }
 
 html { font-size: 18px; }
@@ -23,52 +24,112 @@ body {
   color: var(--text);
   font-family: 'EB Garamond', Georgia, serif;
   line-height: 1.75;
-  padding: 0 1.5rem;
+  min-height: 100vh;
 }
 
-/* ── Layout ── */
-.site-header {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 3rem 0 1.5rem;
-  border-bottom: 1px solid var(--rule);
+/* ── Sidebar layout ── */
+.layout {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  min-height: 100vh;
 }
 
-.site-title {
+/* ── Sidebar ── */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid var(--rule);
+  padding: 2.5rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
-  font-size: 1.1rem;
-  letter-spacing: 0.04em;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
   color: var(--accent);
   text-decoration: none;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  display: block;
 }
 
-.site-nav a {
-  font-size: 0.85rem;
+.sidebar-title:hover { text-decoration: none; opacity: 0.8; }
+
+.nav-section { margin-bottom: 1.5rem; }
+
+.nav-part-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--faint-text);
-  text-decoration: none;
-  margin-left: 1.5rem;
-  letter-spacing: 0.03em;
+  display: block;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-.site-nav a:hover { color: var(--text); }
+.nav-section ul { list-style: none; margin-top: 0.4rem; }
+.nav-section li { margin-bottom: 0.1rem; }
+
+.nav-section a {
+  font-size: 0.82rem;
+  color: var(--light-text);
+  text-decoration: none;
+  line-height: 1.4;
+  display: block;
+  padding: 0.2rem 0;
+  transition: color 0.15s;
+}
+
+.nav-section a:hover { color: var(--text); text-decoration: none; }
+.nav-section a.current { color: var(--accent); font-style: italic; }
+.nav-section a.coming-soon { color: var(--faint-text); cursor: default; pointer-events: none; }
+
+/* ── Main content area ── */
+.content-wrap {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  padding: 0 2rem;
+  min-width: 0;
+}
 
 main {
-  max-width: 680px;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 3rem 0 6rem;
+  padding: 3.5rem 0 6rem;
 }
 
 footer {
-  max-width: 680px;
+  max-width: 640px;
   margin: 0 auto;
   padding: 2rem 0 3rem;
   border-top: 1px solid var(--rule);
   font-size: 0.8rem;
   color: var(--faint-text);
+}
+
+/* ── Mobile nav toggle ── */
+.mobile-nav-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  color: var(--accent);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  letter-spacing: 0.04em;
 }
 
 /* ── Typography ── */
@@ -166,11 +227,35 @@ blockquote {
   font-size: 1.05rem;
 }
 
+/* ── Diagrams ── */
+.diagram {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  background: #F3F0EB;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.diagram img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
+.diagram figcaption {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--faint-text);
+  font-style: italic;
+}
+
 /* ── Index / homepage ── */
-.essay-list { list-style: none; margin-top: 2rem; }
+.essay-list { list-style: none; margin-top: 1rem; }
 
 .essay-list li {
-  padding: 1.5rem 0;
+  padding: 1.2rem 0;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -199,7 +284,7 @@ blockquote {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--faint-text);
-  margin: 3rem 0 0;
+  margin: 2.5rem 0 0;
 }
 
 /* ── Navigation between essays ── */
@@ -214,3 +299,26 @@ blockquote {
 }
 
 .essay-nav a { color: var(--accent); }
+
+/* ── Mobile ── */
+@media (max-width: 720px) {
+  .mobile-nav-toggle { display: block; }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 100;
+    background: var(--bg);
+  }
+
+  .sidebar.open { transform: translateX(0); }
+
+  .content-wrap {
+    margin-left: 0;
+    padding: 0 1.25rem;
+  }
+
+  main { padding-top: 4rem; }
+
+  h1 { font-size: 2rem; }
+}

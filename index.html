@@ -8,98 +8,109 @@
 </head>
 <body>
 
-  <header class="site-header">
-    <a href="index.html" class="site-title">The Filter &amp; The Heart</a>
-    <nav class="site-nav">
-      <a href="index.html">Essays</a>
-      <a href="essays/preface.html">Preface</a>
+  <button class="mobile-nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰ Contents</button>
+
+  <div class="layout">
+
+    <nav class="sidebar">
+      <a href="index.html" class="sidebar-title">The Filter<br>&amp; The Heart</a>
+
+      <div class="nav-section">
+        <span class="nav-part-label">Preface</span>
+        <ul>
+          <li><a href="essays/preface.html">A Note Before We Begin</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-part-label">Part I — The Machine</span>
+        <ul>
+          <li><a href="essays/01-ego-as-process.html">The Ego as Process</a></li>
+          <li><a class="coming-soon">The Filter in Action</a></li>
+          <li><a class="coming-soon">The Pack Animal Substrate</a></li>
+          <li><a class="coming-soon">The Addiction Engine</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-part-label">Part II — The Curator</span>
+        <ul>
+          <li><a class="coming-soon">The Curator</a></li>
+          <li><a class="coming-soon">Why Wisdom Gets Filtered Out</a></li>
+          <li><a class="coming-soon">The Realms</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-part-label">Part III — The Paths</span>
+        <ul>
+          <li><a class="coming-soon">Making the World Conform</a></li>
+          <li><a class="coming-soon">Dissolving the Beliefs</a></li>
+          <li><a class="coming-soon">De-objectifying the Self</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-part-label">Part IV — The Heart</span>
+        <ul>
+          <li><a class="coming-soon">The Trap on Both Paths</a></li>
+          <li><a class="coming-soon">The Spirit Path vs. The Status Path</a></li>
+          <li><a class="coming-soon">What Opening the Heart Actually Means</a></li>
+        </ul>
+      </div>
     </nav>
-  </header>
 
-  <main>
-    <h1>The Filter &amp; The Heart</h1>
-    <p style="color: var(--light-text); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 3rem;">A meditator's map for friends who asked.</p>
+    <div class="content-wrap">
+      <main>
+        <h1>The Filter &amp; The Heart</h1>
+        <p style="color: var(--light-text); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 3rem;">A meditator's map for friends who asked.</p>
 
-    <p class="part-heading">Preface</p>
-    <ul class="essay-list">
-      <li>
-        <a href="essays/preface.html" class="essay-title">A Note Before We Begin</a>
-        <span class="essay-desc">Who this is for, how it came, and what to do with it.</span>
-      </li>
-    </ul>
+        <p class="part-heading">Preface</p>
+        <ul class="essay-list">
+          <li>
+            <a href="essays/preface.html" class="essay-title">A Note Before We Begin</a>
+            <span class="essay-desc">Who this is for, how it came, and what to do with it.</span>
+          </li>
+        </ul>
 
-    <p class="part-heading">Part I — The Machine</p>
-    <ul class="essay-list">
-      <li>
-        <a href="essays/01-ego-as-process.html" class="essay-title">The Ego as Process</a>
-        <span class="essay-desc">Not a thing but a mechanism. How the filter comes to be.</span>
-      </li>
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">The Filter in Action</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">The Pack Animal Substrate</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">The Addiction Engine</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-    </ul>
+        <p class="part-heading">Part I — The Machine</p>
+        <ul class="essay-list">
+          <li>
+            <a href="essays/01-ego-as-process.html" class="essay-title">The Ego as Process</a>
+            <span class="essay-desc">Not a thing but a mechanism. How the filter comes to be.</span>
+          </li>
+          <li><span class="essay-title" style="color: var(--faint-text);">The Filter in Action</span><span class="essay-desc">Coming soon.</span></li>
+          <li><span class="essay-title" style="color: var(--faint-text);">The Pack Animal Substrate</span><span class="essay-desc">Coming soon.</span></li>
+          <li><span class="essay-title" style="color: var(--faint-text);">The Addiction Engine</span><span class="essay-desc">Coming soon.</span></li>
+        </ul>
 
-    <p class="part-heading">Part II — The Curator</p>
-    <ul class="essay-list">
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">The Curator</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">Why Wisdom Gets Filtered Out</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">The Realms</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-    </ul>
+        <p class="part-heading">Part II — The Curator</p>
+        <ul class="essay-list">
+          <li><span class="essay-title" style="color: var(--faint-text);">The Curator</span><span class="essay-desc">Coming soon.</span></li>
+          <li><span class="essay-title" style="color: var(--faint-text);">Why Wisdom Gets Filtered Out</span><span class="essay-desc">Coming soon.</span></li>
+          <li><span class="essay-title" style="color: var(--faint-text);">The Realms</span><span class="essay-desc">Coming soon.</span></li>
+        </ul>
 
-    <p class="part-heading">Part III — The Paths</p>
-    <ul class="essay-list">
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">Making the World Conform</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">Dissolving the Beliefs</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">De-objectifying the Self</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-    </ul>
+        <p class="part-heading">Part III — The Paths</p>
+        <ul class="essay-list">
+          <li><span class="essay-title" style="color: var(--faint-text);">Making the World Conform</span><span class="essay-desc">Coming soon.</span></li>
+          <li><span class="essay-title" style="color: var(--faint-text);">Dissolving the Beliefs</span><span class="essay-desc">Coming soon.</span></li>
+          <li><span class="essay-title" style="color: var(--faint-text);">De-objectifying the Self</span><span class="essay-desc">Coming soon.</span></li>
+        </ul>
 
-    <p class="part-heading">Part IV — The Heart</p>
-    <ul class="essay-list">
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">The Trap on Both Paths</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">The Spirit Path vs. The Status Path</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-      <li>
-        <a href="#" class="essay-title" style="color: var(--faint-text);">What Opening the Heart Actually Means</a>
-        <span class="essay-desc">Coming soon.</span>
-      </li>
-    </ul>
-  </main>
+        <p class="part-heading">Part IV — The Heart</p>
+        <ul class="essay-list">
+          <li><span class="essay-title" style="color: var(--faint-text);">The Trap on Both Paths</span><span class="essay-desc">Coming soon.</span></li>
+          <li><span class="essay-title" style="color: var(--faint-text);">The Spirit Path vs. The Status Path</span><span class="essay-desc">Coming soon.</span></li>
+          <li><span class="essay-title" style="color: var(--faint-text);">What Opening the Heart Actually Means</span><span class="essay-desc">Coming soon.</span></li>
+        </ul>
+      </main>
 
-  <footer>
-    Written with the help of Claude. Authority comes from lived experience, not credentials.
-  </footer>
+      <footer>
+        Written with the help of Claude. Authority comes from lived experience, not credentials.
+      </footer>
+    </div>
 
+  </div>
 </body>
 </html>
