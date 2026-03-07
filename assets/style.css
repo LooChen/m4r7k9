@@ -1,0 +1,216 @@
+/* The Filter & The Heart — Shared Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #FAFAF8;
+  --text:       #2E2A24;
+  --light-text: #6B6357;
+  --faint-text: #9A9080;
+  --rule:       #DDD8CE;
+  --rule-dark:  #C8C0B0;
+  --accent:     #7A6A52;
+  --positive:   #5A8A5A;
+  --negative:   #B85450;
+}
+
+html { font-size: 18px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.75;
+  padding: 0 1.5rem;
+}
+
+/* ── Layout ── */
+.site-header {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 0 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.site-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-nav a {
+  font-size: 0.85rem;
+  color: var(--faint-text);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+.site-nav a:hover { color: var(--text); }
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 0 6rem;
+}
+
+footer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--faint-text);
+}
+
+/* ── Typography ── */
+h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin: 2.5rem 0 0.75rem;
+  color: var(--text);
+}
+
+h3 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint-text);
+  margin: 2rem 0 0.5rem;
+}
+
+p { margin-bottom: 1.4rem; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Branch links ── */
+a.branch {
+  color: var(--text);
+  border-bottom: 1px dashed var(--rule-dark);
+  font-style: italic;
+}
+
+a.branch::after {
+  content: ' ↗';
+  font-style: normal;
+  font-size: 0.75em;
+  color: var(--faint-text);
+  vertical-align: super;
+}
+
+a.branch:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
+}
+
+/* ── Article header ── */
+.essay-meta {
+  color: var(--faint-text);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.essay-meta .part-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* ── Drop cap ── */
+.drop-cap::first-letter {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 4.2rem;
+  line-height: 0.8;
+  float: left;
+  margin: 0.1em 0.08em 0 0;
+  color: var(--accent);
+}
+
+/* ── Pull quote ── */
+blockquote {
+  border-left: 2px solid var(--rule-dark);
+  margin: 2rem 0;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  color: var(--light-text);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+/* ── Index / homepage ── */
+.essay-list { list-style: none; margin-top: 2rem; }
+
+.essay-list li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.essay-list li:first-child { border-top: 1px solid var(--rule); }
+
+.essay-list .essay-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+  display: block;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.essay-list .essay-title:hover { color: var(--accent); text-decoration: none; }
+
+.essay-list .essay-desc {
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
+
+.part-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint-text);
+  margin: 3rem 0 0;
+}
+
+/* ── Navigation between essays ── */
+.essay-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--faint-text);
+}
+
+.essay-nav a { color: var(--accent); }
