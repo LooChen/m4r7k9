@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="720" height="320" font-family="Georgia, 'Times New Roman', serif">
+
+  <!-- Background -->
+  <rect width="720" height="320" fill="#FAFAF8"/>
+
+  <!-- Title -->
+  <text x="360" y="34" text-anchor="middle" font-size="13" fill="#3D3830" letter-spacing="2">THE ADDICTION FREED</text>
+  <line x1="220" y1="42" x2="500" y2="42" stroke="#C8C0B0" stroke-width="0.8"/>
+
+  <!-- Dividing line -->
+  <line x1="360" y1="55" x2="360" y2="290" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- LEFT: The Addiction -->
+  <text x="180" y="72" text-anchor="middle" font-size="10" fill="#9A9080" letter-spacing="1.5">THE ADDICTION</text>
+
+  <line x1="30" y1="178" x2="340" y2="178" stroke="#DDD8CE" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <text x="22" y="182" text-anchor="middle" font-size="8" fill="#C0B8AC">0</text>
+
+  <path d="M 40,178 C 65,178 72,105 98,105 C 124,105 130,178 155,178 C 180,178 187,252 212,252 C 237,252 244,178 268,178 C 292,178 298,92 322,92 C 336,92 344,135 348,178"
+    fill="none" stroke="#7A6A52" stroke-width="2"/>
+
+  <path d="M 72,178 C 80,178 86,105 98,105 C 110,105 118,178 126,178 Z" fill="#5A8A5A" opacity="0.08"/>
+  <path d="M 295,178 C 303,178 308,92 322,92 C 334,92 342,140 348,178 Z" fill="#5A8A5A" opacity="0.08"/>
+  <path d="M 182,178 C 190,178 196,252 212,252 C 228,252 235,178 242,178 Z" fill="#B85450" opacity="0.08"/>
+
+  <text x="98" y="96" text-anchor="middle" font-size="8.5" fill="#5A8A5A">the hit</text>
+  <text x="98" y="107" text-anchor="middle" font-size="7.5" fill="#7AAA7A" font-style="italic">pride · elation</text>
+  <text x="212" y="268" text-anchor="middle" font-size="8.5" fill="#B85450">the withdrawal</text>
+  <text x="212" y="279" text-anchor="middle" font-size="7.5" fill="#C87468" font-style="italic">shame · dread</text>
+  <text x="180" y="302" text-anchor="middle" font-size="9" fill="#B0A898" font-style="italic">chasing the high, feeding the low</text>
+
+  <!-- RIGHT: The Freedom -->
+  <text x="540" y="72" text-anchor="middle" font-size="10" fill="#9A9080" letter-spacing="1.5">THE FREEDOM</text>
+
+  <line x1="375" y1="178" x2="690" y2="178" stroke="#DDD8CE" stroke-width="0.8" stroke-dasharray="3 2"/>
+
+  <ellipse cx="535" cy="168" rx="130" ry="28" fill="#7A6A52" opacity="0.04"/>
+  <ellipse cx="535" cy="168" rx="100" ry="18" fill="#7A6A52" opacity="0.05"/>
+
+  <path d="M 385,172 C 410,172 418,162 435,160 C 452,158 462,166 480,166 C 498,166 506,158 524,157 C 542,156 552,163 570,164 C 588,165 596,160 614,159 C 632,158 642,163 660,163 C 672,163 680,161 688,160"
+    fill="none" stroke="#7A6A52" stroke-width="2" opacity="0.7"/>
+
+  <circle cx="435" cy="160" r="3.5" fill="#7A6A52" opacity="0.35"/>
+  <circle cx="524" cy="157" r="3.5" fill="#7A6A52" opacity="0.35"/>
+  <circle cx="614" cy="159" r="3.5" fill="#7A6A52" opacity="0.35"/>
+
+  <text x="536" y="132" text-anchor="middle" font-size="9" fill="#7A6A52" font-style="italic">peace · presence · joy</text>
+  <text x="536" y="145" text-anchor="middle" font-size="8.5" fill="#9A9080" font-style="italic">not the absence of feeling —</text>
+  <text x="536" y="157" text-anchor="middle" font-size="8.5" fill="#9A9080" font-style="italic">the end of the craving</text>
+
+  <line x1="690" y1="105" x2="690" y2="160" stroke="#C8C0B0" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <text x="700" y="118" text-anchor="start" font-size="7.5" fill="#B0A898" font-style="italic">not as</text>
+  <text x="700" y="129" text-anchor="start" font-size="7.5" fill="#B0A898" font-style="italic">high —</text>
+  <text x="700" y="148" text-anchor="start" font-size="7.5" fill="#7A6A52" font-style="italic">but free</text>
+
+  <text x="536" y="302" text-anchor="middle" font-size="9" fill="#B0A898" font-style="italic">alive without the burden</text>
+
+</svg>

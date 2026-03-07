@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" font-family="Georgia, 'Times New Roman', serif">
+
+  <!-- Background -->
+  <rect width="720" height="340" fill="#FAFAF8"/>
+
+  <!-- Title -->
+  <text x="360" y="36" text-anchor="middle" font-size="13" fill="#3D3830" letter-spacing="2">THE OSCILLATION</text>
+  <line x1="220" y1="44" x2="500" y2="44" stroke="#C8C0B0" stroke-width="0.8"/>
+  <text x="360" y="60" text-anchor="middle" font-size="10" fill="#9A9080" letter-spacing="1" font-style="italic">a single belief, playing out over time</text>
+
+  <!-- Center axis line -->
+  <line x1="60" y1="190" x2="660" y2="190" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="36" y="194" text-anchor="middle" font-size="9" fill="#B0A898" letter-spacing="0.5">neutral</text>
+
+  <path d="M 60,190 C 100,190 110,95 160,95 C 210,95 220,190 260,190 C 300,190 310,285 360,285 C 410,285 420,190 460,190 C 500,190 510,80 560,80 C 610,80 620,190 660,190"
+    fill="none" stroke="#7A6A52" stroke-width="2"/>
+
+  <line x1="160" y1="95" x2="160" y2="75" stroke="#5A8A5A" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <text x="160" y="70" text-anchor="middle" font-size="9" fill="#5A8A5A" letter-spacing="0.5">PRAISE</text>
+  <text x="160" y="58" text-anchor="middle" font-size="8" fill="#7AAA7A" font-style="italic">pride · validation</text>
+
+  <line x1="560" y1="80" x2="560" y2="60" stroke="#5A8A5A" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <text x="560" y="55" text-anchor="middle" font-size="9" fill="#5A8A5A" letter-spacing="0.5">SUCCESS</text>
+  <text x="560" y="43" text-anchor="middle" font-size="8" fill="#7AAA7A" font-style="italic">elation · confidence</text>
+
+  <line x1="360" y1="285" x2="360" y2="305" stroke="#B85450" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <text x="360" y="316" text-anchor="middle" font-size="9" fill="#B85450" letter-spacing="0.5">CRITICISM</text>
+  <text x="360" y="328" text-anchor="middle" font-size="8" fill="#C87468" font-style="italic">shame · withdrawal</text>
+
+  <path d="M 200,130 Q 240,110 270,140" fill="none" stroke="#9A9080" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#arrow-faint)"/>
+  <text x="232" y="118" text-anchor="middle" font-size="8.5" fill="#9A9080" font-style="italic">chasing the high</text>
+
+  <line x1="640" y1="80" x2="680" y2="80" stroke="#C8C0B0" stroke-width="0.8"/>
+  <line x1="640" y1="190" x2="680" y2="190" stroke="#C8C0B0" stroke-width="0.8"/>
+  <line x1="660" y1="80" x2="660" y2="190" stroke="#C8C0B0" stroke-width="0.8" marker-end="url(#arrow-faint)" marker-start="url(#arrow-faint-up)"/>
+  <text x="688" y="140" text-anchor="start" font-size="8.5" fill="#9A9080" font-style="italic">amplitude</text>
+  <text x="688" y="152" text-anchor="start" font-size="8.5" fill="#9A9080" font-style="italic">grows</text>
+
+  <line x1="60" y1="310" x2="640" y2="310" stroke="#C8C0B0" stroke-width="1" marker-end="url(#arrow-faint)"/>
+  <text x="350" y="325" text-anchor="middle" font-size="9" fill="#B0A898" letter-spacing="1">TIME</text>
+
+  <defs>
+    <marker id="arrow-faint" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#C8C0B0"/>
+    </marker>
+    <marker id="arrow-faint-up" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+      <path d="M6,0 L6,6 L0,3 z" fill="#C8C0B0"/>
+    </marker>
+  </defs>
+
+</svg>
