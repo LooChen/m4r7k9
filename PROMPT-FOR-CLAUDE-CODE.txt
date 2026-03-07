@@ -1,1 +1,10 @@
-This folder is a git repo that publishes to https://loochen.github.io (GitHub: LooChen/loochen.github.io). Read CLAUDE.md for full context. Please initialize git if needed, set the remote to https://github.com/LooChen/loochen.github.io.git, and push any files present to the main branch. Going forward your job is simple: whenever new HTML or CSS files appear in this folder, commit and push them so the site updates.
+Hi! Please read CONTEXT.md and CLAUDE.md in this folder first — they explain the full project.
+
+Then please do the following:
+
+1. Check if this folder is properly set up as a git repo connected to https://github.com/LooChen/loochen.github.io.git
+2. Set up GitHub authentication using the simplest method available — I'd like to avoid manually creating personal access tokens if possible. A browser-based login flow is ideal.
+3. Push the current files in this folder to the main branch
+4. Confirm the site is live at https://loochen.github.io
+
+Once that's all working, your ongoing job is simple: whenever I say "push new files" or "publish", commit everything in this folder and push it to GitHub. I'll tell you what changed so you can write a good commit message.
