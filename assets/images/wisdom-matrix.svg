@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" font-family="Georgia, 'EB Garamond', serif">
+
+  <rect width="640" height="480" fill="#FAFAF8"/>
+
+  <rect x="100" y="80" width="230" height="170" fill="#EDF4ED" rx="2"/>
+  <rect x="330" y="80" width="230" height="170" fill="#FBF5E8" rx="2"/>
+  <rect x="100" y="250" width="230" height="170" fill="#F7EDEC" rx="2"/>
+  <rect x="330" y="250" width="230" height="170" fill="#F5F3F0" rx="2"/>
+
+  <line x1="100" y1="80" x2="560" y2="80" stroke="#C8C0B0" stroke-width="1"/>
+  <line x1="100" y1="250" x2="560" y2="250" stroke="#C8C0B0" stroke-width="1"/>
+  <line x1="100" y1="420" x2="560" y2="420" stroke="#C8C0B0" stroke-width="1"/>
+  <line x1="100" y1="80" x2="100" y2="420" stroke="#C8C0B0" stroke-width="1"/>
+  <line x1="330" y1="80" x2="330" y2="420" stroke="#C8C0B0" stroke-width="1"/>
+  <line x1="560" y1="80" x2="560" y2="420" stroke="#C8C0B0" stroke-width="1"/>
+
+  <text x="215" y="58" text-anchor="middle" font-size="12" fill="#6B6357" letter-spacing="0.08em" font-style="italic">genuine content</text>
+  <text x="445" y="58" text-anchor="middle" font-size="12" fill="#6B6357" letter-spacing="0.08em" font-style="italic">empty content</text>
+
+  <text x="68" y="168" text-anchor="middle" font-size="12" fill="#6B6357" letter-spacing="0.04em" font-style="italic" transform="rotate(-90, 68, 168)">high status</text>
+  <text x="68" y="338" text-anchor="middle" font-size="12" fill="#6B6357" letter-spacing="0.04em" font-style="italic" transform="rotate(-90, 68, 338)">low status</text>
+
+  <text x="330" y="26" text-anchor="middle" font-size="11" fill="#9A9080" letter-spacing="0.12em">WHAT IS OFFERED</text>
+  <text x="28" y="250" text-anchor="middle" font-size="11" fill="#9A9080" letter-spacing="0.12em" transform="rotate(-90, 28, 250)">WHO OFFERS IT</text>
+
+  <text x="215" y="148" text-anchor="middle" font-size="22" fill="#5A8A5A">✓</text>
+  <text x="215" y="172" text-anchor="middle" font-size="13" fill="#5A8A5A">received</text>
+  <text x="215" y="192" text-anchor="middle" font-size="11" fill="#7A9A7A" font-style="italic">filter waves it through</text>
+
+  <text x="445" y="148" text-anchor="middle" font-size="22" fill="#B8903A">✓</text>
+  <text x="445" y="172" text-anchor="middle" font-size="13" fill="#B8903A">received anyway</text>
+  <text x="445" y="192" text-anchor="middle" font-size="11" fill="#C8A060" font-style="italic">source overrides content</text>
+
+  <rect x="102" y="252" width="226" height="166" fill="#F2E6E5" rx="2"/>
+  <text x="215" y="318" text-anchor="middle" font-size="22" fill="#B85450">✗</text>
+  <text x="215" y="342" text-anchor="middle" font-size="13" fill="#B85450">refused</text>
+  <text x="215" y="362" text-anchor="middle" font-size="11" fill="#C07470" font-style="italic">the costly failure</text>
+  <rect x="110" y="260" width="66" height="18" rx="3" fill="#B85450" opacity="0.15"/>
+  <text x="143" y="273" text-anchor="middle" font-size="9.5" fill="#B85450" letter-spacing="0.04em">KEY CELL</text>
+
+  <text x="445" y="318" text-anchor="middle" font-size="22" fill="#9A9080">✗</text>
+  <text x="445" y="342" text-anchor="middle" font-size="13" fill="#9A9080">refused</text>
+  <text x="445" y="362" text-anchor="middle" font-size="11" fill="#B0A898" font-style="italic">filter correct, wrong reason</text>
+
+  <text x="330" y="452" text-anchor="middle" font-size="11.5" fill="#9A9080" font-style="italic">Outcome tracks the source, not the truth.</text>
+
+</svg>
