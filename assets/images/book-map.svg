@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 980" width="1500" height="980" font-family="Georgia, serif">
+  <defs>
+    <style>
+      .part-label { font-size: 11px; letter-spacing: 0.12em; fill: #9A9080; text-transform: uppercase; }
+      .chapter-title { font-size: 13.5px; font-weight: bold; fill: #2E2A24; }
+      .concept { font-size: 11px; fill: #6B6357; }
+      .connector { stroke: #DDD8CE; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .connector-soft { stroke: #DDD8CE; stroke-width: 1; fill: none; stroke-dasharray: 4 3; marker-end: url(#arrow-soft); }
+      .part-rule { stroke: #C8C0B0; stroke-width: 1; }
+      .node-box { rx: 6; ry: 6; fill: #FAFAF8; stroke: #DDD8CE; stroke-width: 1.2; }
+      .node-box-accent { rx: 6; ry: 6; fill: #FAFAF8; stroke: #7A6A52; stroke-width: 1.5; }
+      .node-box-positive { rx: 6; ry: 6; fill: #FAFAF8; stroke: #5A8A5A; stroke-width: 1.5; }
+      .node-box-negative { rx: 6; ry: 6; fill: #FAFAF8; stroke: #B85450; stroke-width: 1.2; }
+      .col-label { font-size: 10px; letter-spacing: 0.18em; fill: #B0A898; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#C8C0B0"/>
+    </marker>
+    <marker id="arrow-soft" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#DDD8CE"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1500" height="980" fill="#FAFAF8"/>
+
+  <!-- COLUMN DIVIDERS -->
+  <line x1="370" y1="40" x2="370" y2="940" stroke="#EDE9E2" stroke-width="1"/>
+  <line x1="730" y1="40" x2="730" y2="940" stroke="#EDE9E2" stroke-width="1"/>
+  <line x1="1090" y1="40" x2="1090" y2="940" stroke="#EDE9E2" stroke-width="1"/>
+
+  <!-- PART LABELS -->
+  <text x="185" y="38" text-anchor="middle" class="col-label">PART I — THE MACHINE</text>
+  <text x="550" y="38" text-anchor="middle" class="col-label">PART II — THE CURATOR</text>
+  <text x="910" y="38" text-anchor="middle" class="col-label">PART III — THE PATHS</text>
+  <text x="1270" y="38" text-anchor="middle" class="col-label">PART IV — THE HEART</text>
+
+  <!-- PREFACE -->
+  <rect x="30" y="55" width="300" height="62" class="node-box" rx="6" ry="6"/>
+  <text x="180" y="76" text-anchor="middle" class="chapter-title">Preface</text>
+  <text x="180" y="93" text-anchor="middle" class="concept">Who this is for · how it came</text>
+  <text x="180" y="108" text-anchor="middle" class="concept">An invitation, not an argument</text>
+
+  <!-- Ch1: Ego as Process -->
+  <rect x="30" y="145" width="300" height="88" class="node-box" rx="6" ry="6"/>
+  <text x="180" y="166" text-anchor="middle" class="chapter-title">1. The Ego as Process</text>
+  <text x="180" y="184" text-anchor="middle" class="concept">Universe unfolds · senses receive</text>
+  <text x="180" y="200" text-anchor="middle" class="concept">Mind objectifies · conditioning judges</text>
+  <text x="180" y="216" text-anchor="middle" class="concept">Ego = a process, not a thing</text>
+
+  <!-- Ch2: The Filter in Action -->
+  <rect x="30" y="263" width="300" height="102" class="node-box-accent" rx="6" ry="6"/>
+  <text x="180" y="284" text-anchor="middle" class="chapter-title">2. The Filter in Action</text>
+  <text x="180" y="302" text-anchor="middle" class="concept">Beliefs = charged poles</text>
+  <text x="180" y="318" text-anchor="middle" class="concept">Oscillation: crest fused to trough</text>
+  <text x="180" y="334" text-anchor="middle" class="concept">Three costs: downside · losing in winning</text>
+  <text x="180" y="350" text-anchor="middle" class="concept">· the weight of carrying</text>
+
+  <!-- Ch3: The Status Game -->
+  <rect x="30" y="395" width="300" height="88" class="node-box" rx="6" ry="6"/>
+  <text x="180" y="416" text-anchor="middle" class="chapter-title">3. The Status Game</text>
+  <text x="180" y="434" text-anchor="middle" class="concept">Pack animal substrate</text>
+  <text x="180" y="450" text-anchor="middle" class="concept">Pride · shame · resentment · validation</text>
+  <text x="180" y="466" text-anchor="middle" class="concept">= status-tracking in disguise</text>
+
+  <!-- Ch4: The Addiction Engine -->
+  <rect x="30" y="513" width="300" height="74" class="node-box" rx="6" ry="6"/>
+  <text x="180" y="534" text-anchor="middle" class="chapter-title">4. The Addiction Engine</text>
+  <text x="180" y="552" text-anchor="middle" class="concept">Positive valence = hit · negative = withdrawal</text>
+  <text x="180" y="568" text-anchor="middle" class="concept">Machine runs below awareness</text>
+
+  <!-- Ch5: The Curator -->
+  <rect x="390" y="145" width="300" height="88" class="node-box" rx="6" ry="6"/>
+  <text x="540" y="166" text-anchor="middle" class="chapter-title">5. The Curator</text>
+  <text x="540" y="184" text-anchor="middle" class="concept">Ego selects · builds identity</text>
+  <text x="540" y="200" text-anchor="middle" class="concept">Selection criteria = status signals</text>
+  <text x="540" y="216" text-anchor="middle" class="concept">Wisdom looks like nothing to this mechanism</text>
+
+  <!-- Ch6: Why Wisdom Gets Filtered Out -->
+  <rect x="390" y="263" width="300" height="88" class="node-box" rx="6" ry="6"/>
+  <text x="540" y="284" text-anchor="middle" class="chapter-title">6. Why Wisdom Gets Filtered Out</text>
+  <text x="540" y="302" text-anchor="middle" class="concept">Insight rarely wears status markers</text>
+  <text x="540" y="318" text-anchor="middle" class="concept">Blind spots accumulate · pressure builds</text>
+  <text x="540" y="334" text-anchor="middle" class="concept">Epiphany = cluster of beliefs collapsing</text>
+
+  <!-- Ch7: The Realms -->
+  <rect x="390" y="381" width="300" height="88" class="node-box" rx="6" ry="6"/>
+  <text x="540" y="402" text-anchor="middle" class="chapter-title">7. The Realms</text>
+  <text x="540" y="420" text-anchor="middle" class="concept">Curation builds entire life trajectories</text>
+  <text x="540" y="436" text-anchor="middle" class="concept">Buddhist realms = self-reinforcing worlds</text>
+  <text x="540" y="452" text-anchor="middle" class="concept">Each realm has its own logic · and ceiling</text>
+
+  <!-- Ch8: Making the World Conform -->
+  <rect x="750" y="145" width="300" height="74" class="node-box-negative" rx="6" ry="6"/>
+  <text x="900" y="166" text-anchor="middle" class="chapter-title">8. Making the World Conform</text>
+  <text x="900" y="184" text-anchor="middle" class="concept">Change circumstances to produce hits</text>
+  <text x="900" y="200" text-anchor="middle" class="concept">Works temporarily · fails structurally · the treadmill</text>
+
+  <!-- Ch9: Dissolving the Beliefs -->
+  <rect x="750" y="249" width="300" height="88" class="node-box-positive" rx="6" ry="6"/>
+  <text x="900" y="270" text-anchor="middle" class="chapter-title">9. Dissolving the Beliefs</text>
+  <text x="900" y="288" text-anchor="middle" class="concept">Loosen the filter itself</text>
+  <text x="900" y="304" text-anchor="middle" class="concept">Feels like dying · the abyss · clinging</text>
+  <text x="900" y="320" text-anchor="middle" class="concept">Opposite of emptiness on the other side</text>
+
+  <!-- Ch10: De-objectifying the Self -->
+  <rect x="750" y="367" width="300" height="74" class="node-box-positive" rx="6" ry="6"/>
+  <text x="900" y="388" text-anchor="middle" class="chapter-title">10. De-objectifying the Self</text>
+  <text x="900" y="406" text-anchor="middle" class="concept">Not just beliefs but the self seen differently</text>
+  <text x="900" y="422" text-anchor="middle" class="concept">Buddhist anatta without requiring the framework</text>
+
+  <!-- Ch11: The Trap on Both Paths -->
+  <rect x="1110" y="145" width="300" height="88" class="node-box" rx="6" ry="6"/>
+  <text x="1260" y="166" text-anchor="middle" class="chapter-title">11. The Trap on Both Paths</text>
+  <text x="1260" y="184" text-anchor="middle" class="concept">Pride-lined and resentment-lined paths</text>
+  <text x="1260" y="200" text-anchor="middle" class="concept">both close the heart symmetrically</text>
+  <text x="1260" y="216" text-anchor="middle" class="concept">Neither positive nor negative is spiritually "better"</text>
+
+  <!-- Ch12: Spirit Path vs Status Path -->
+  <rect x="1110" y="263" width="300" height="88" class="node-box-accent" rx="6" ry="6"/>
+  <text x="1260" y="284" text-anchor="middle" class="chapter-title">12. Spirit Path vs. Status Path</text>
+  <text x="1260" y="302" text-anchor="middle" class="concept">The fork made explicit</text>
+  <text x="1260" y="318" text-anchor="middle" class="concept">Curator's logic vs. releasing the curator</text>
+  <text x="1260" y="334" text-anchor="middle" class="concept">How to tell which one you're on</text>
+
+  <!-- Ch13: What Opening the Heart Means -->
+  <rect x="1110" y="381" width="300" height="88" class="node-box-positive" rx="6" ry="6"/>
+  <text x="1260" y="402" text-anchor="middle" class="chapter-title">13. What Opening the Heart Means</text>
+  <text x="1260" y="420" text-anchor="middle" class="concept">Not sentiment · not performance</text>
+  <text x="1260" y="436" text-anchor="middle" class="concept">Presence · discernment · compassion</text>
+  <text x="1260" y="452" text-anchor="middle" class="concept">Available regardless of which realm you're in</text>
+
+  <!-- Epilogue -->
+  <rect x="1110" y="499" width="300" height="62" class="node-box" rx="6" ry="6"/>
+  <text x="1260" y="520" text-anchor="middle" class="chapter-title">Epilogue</text>
+  <text x="1260" y="538" text-anchor="middle" class="concept">Your own experience is the only authority</text>
+  <text x="1260" y="554" text-anchor="middle" class="concept">An invitation, not a conclusion</text>
+
+  <!-- CONNECTORS — Part I vertical flow -->
+  <line x1="180" y1="117" x2="180" y2="145" class="connector-soft"/>
+  <line x1="180" y1="233" x2="180" y2="263" class="connector"/>
+  <line x1="180" y1="365" x2="180" y2="395" class="connector"/>
+  <line x1="180" y1="483" x2="180" y2="513" class="connector"/>
+
+  <!-- CONNECTORS — Part I to Part II -->
+  <path d="M330,340 C360,340 370,220 390,220" class="connector"/>
+  <path d="M330,450 C360,450 370,420 390,420" class="connector"/>
+  <path d="M330,555 C360,555 370,460 390,460" class="connector"/>
+
+  <!-- CONNECTORS — Part II vertical flow -->
+  <line x1="540" y1="233" x2="540" y2="263" class="connector"/>
+  <line x1="540" y1="351" x2="540" y2="381" class="connector"/>
+
+  <!-- CONNECTORS — Part II to Part III -->
+  <path d="M690,420 C720,420 730,295 750,293" class="connector"/>
+  <path d="M690,293 C720,293 730,180 750,180" class="connector-soft"/>
+
+  <!-- CONNECTORS — Part III vertical flow -->
+  <line x1="900" y1="219" x2="900" y2="249" class="connector-soft"/>
+  <line x1="900" y1="337" x2="900" y2="367" class="connector"/>
+
+  <!-- CONNECTORS — Part III to Part IV -->
+  <path d="M1050,180 C1080,180 1090,220 1110,220" class="connector-soft"/>
+  <path d="M1050,293 C1080,293 1090,300 1110,300" class="connector"/>
+  <path d="M1050,403 C1080,403 1090,300 1110,300" class="connector"/>
+
+  <!-- CONNECTORS — Part IV vertical flow -->
+  <line x1="1260" y1="233" x2="1260" y2="263" class="connector"/>
+  <line x1="1260" y1="351" x2="1260" y2="381" class="connector"/>
+  <line x1="1260" y1="469" x2="1260" y2="499" class="connector"/>
+
+  <!-- THE FILTER band -->
+  <rect x="30" y="620" width="660" height="58" rx="4" ry="4" fill="#F2EFE8" stroke="#C8C0B0" stroke-width="1"/>
+  <text x="350" y="644" text-anchor="middle" font-size="11px" fill="#9A9080" letter-spacing="0.1em">THE FILTER</text>
+  <text x="350" y="662" text-anchor="middle" font-size="11px" fill="#6B6357">Beliefs conditioned by evolution · culture · personal experience. Assigns valence to all experience.</text>
+
+  <!-- THE HEART band -->
+  <rect x="750" y="620" width="660" height="58" rx="4" ry="4" fill="#F2EFE8" stroke="#C8C0B0" stroke-width="1"/>
+  <text x="1080" y="644" text-anchor="middle" font-size="11px" fill="#9A9080" letter-spacing="0.1em">THE HEART</text>
+  <text x="1080" y="662" text-anchor="middle" font-size="11px" fill="#6B6357">The hit closes the heart. The closed heart cannot see clearly. Opening it is the actual destination.</text>
+
+  <!-- LEGEND -->
+  <text x="30" y="728" font-size="10px" fill="#B0A898" letter-spacing="0.1em">LEGEND</text>
+  <rect x="30" y="740" width="80" height="26" rx="4" ry="4" fill="#FAFAF8" stroke="#7A6A52" stroke-width="1.5"/>
+  <text x="70" y="757" text-anchor="middle" font-size="10px" fill="#6B6357">Core concept</text>
+  <rect x="130" y="740" width="80" height="26" rx="4" ry="4" fill="#FAFAF8" stroke="#5A8A5A" stroke-width="1.5"/>
+  <text x="170" y="757" text-anchor="middle" font-size="10px" fill="#6B6357">Path forward</text>
+  <rect x="230" y="740" width="80" height="26" rx="4" ry="4" fill="#FAFAF8" stroke="#B85450" stroke-width="1.2"/>
+  <text x="270" y="757" text-anchor="middle" font-size="10px" fill="#6B6357">The treadmill</text>
+  <rect x="330" y="740" width="80" height="26" rx="4" ry="4" fill="#FAFAF8" stroke="#DDD8CE" stroke-width="1.2"/>
+  <text x="370" y="757" text-anchor="middle" font-size="10px" fill="#6B6357">Chapter</text>
+  <line x1="430" y1="753" x2="470" y2="753" stroke="#C8C0B0" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="480" y="757" font-size="10px" fill="#6B6357">Leads to</text>
+  <line x1="540" y1="753" x2="580" y2="753" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow-soft)"/>
+  <text x="590" y="757" font-size="10px" fill="#6B6357">One option among others</text>
+
+  <!-- Title -->
+  <text x="750" y="870" text-anchor="middle" font-size="18px" fill="#2E2A24" letter-spacing="0.05em" font-style="italic">The Filter &amp; The Heart</text>
+  <text x="750" y="892" text-anchor="middle" font-size="11px" fill="#9A9080" letter-spacing="0.12em">A MEDITATOR'S MAP</text>
+
+</svg>
