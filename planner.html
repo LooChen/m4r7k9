@@ -10,152 +10,239 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #FAFAF8;
-      --text: #2E2A24;
-      --light: #6B6357;
-      --faint: #9A9080;
-      --fainter: #B0A898;
-      --rule: #DDD8CE;
-      --rule-light: #EDE9E2;
-      --accent: #7A6A52;
-      --green: #5A8A5A;
-      --gold: #C8A820;
-      --blue: #4A7A9B;
-      --red: #B85450;
-      --sand: #9A9080;
+      --bg: #FAFAF8; --text: #2E2A24; --light: #6B6357;
+      --faint: #9A9080; --fainter: #B0A898;
+      --rule: #DDD8CE; --rule-light: #EDE9E2;
+      --accent: #7A6A52; --gold: #C8A820;
+      --green: #5A8A5A; --blue: #4A7A9B; --red: #B85450;
     }
+    body { background: var(--bg); color: var(--text); font-family: 'EB Garamond', Georgia, serif; font-size: 16px; min-height: 100vh; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'EB Garamond', Georgia, serif;
-      font-size: 16px;
-      min-height: 100vh;
-    }
-
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--bg);
-      border-bottom: 1px solid var(--rule);
-      padding: 0.9rem 1.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    /* ── HEADER ── */
+    header { position: sticky; top: 0; z-index: 200; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 0.85rem 1.75rem; display: flex; align-items: center; justify-content: space-between; }
     .header-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 1rem; color: var(--accent); letter-spacing: 0.02em; }
     .header-sub { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-left: 0.75rem; }
     .view-tabs { display: flex; gap: 0.4rem; }
-    .view-tab {
-      font-family: 'EB Garamond', Georgia, serif;
-      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 0.2rem 0.65rem; border-radius: 3px; cursor: pointer;
-      border: 1px solid var(--rule); background: transparent; color: var(--faint);
-      transition: all 0.15s;
-    }
+    .view-tab { font-family: 'EB Garamond', Georgia, serif; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.65rem; border-radius: 3px; cursor: pointer; border: 1px solid var(--rule); background: transparent; color: var(--faint); transition: all 0.15s; }
     .view-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-    /* LEGEND */
-    .legend {
-      padding: 0.5rem 1.75rem;
-      border-bottom: 1px solid var(--rule-light);
-      display: flex; gap: 1.25rem; align-items: center;
-    }
+    /* ── LEGEND ── */
+    .legend { padding: 0.45rem 1.75rem; border-bottom: 1px solid var(--rule-light); display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
     .legend-item { display: flex; align-items: center; gap: 0.35rem; }
     .legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
     .legend-label { font-size: 0.7rem; color: var(--faint); }
     .legend-hint { margin-left: auto; font-size: 0.7rem; color: #C8C0B0; font-style: italic; }
 
-    /* BODY */
-    #body { padding: 1.5rem 1.75rem 5rem; }
-    #spine-view { display: none; max-width: 660px; margin: 0 auto; padding: 2rem 1.75rem 5rem; }
+    /* ── SHARED UTILS ── */
+    .btn { font-family: 'EB Garamond', Georgia, serif; font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 3px; cursor: pointer; border: 1px solid var(--rule); background: transparent; color: var(--faint); transition: all 0.12s; }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.primary:hover { opacity: 0.85; }
+    .btn:not(.primary):hover { background: var(--rule-light); }
+    .field-label { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fainter); margin-bottom: 0.28rem; }
+    textarea { font-family: 'EB Garamond', Georgia, serif; font-size: 0.88rem; font-style: italic; line-height: 1.55; color: var(--text); border: 1px solid var(--gold); border-radius: 3px; padding: 0.35rem 0.5rem; background: #FFFBE6; resize: vertical; outline: none; width: 100%; }
+    .edit-actions { display: flex; gap: 0.35rem; margin-top: 0.3rem; }
 
-    /* PART GROUP */
-    .part-group { margin-bottom: 2rem; }
-    .part-label {
-      font-size: 0.63rem; letter-spacing: 0.13em; text-transform: uppercase;
-      margin-bottom: 0.65rem; padding-bottom: 0.35rem;
-      border-bottom: 1px solid;
+    /* ══════════════════════════════════════════
+       TIMELINE VIEW
+    ══════════════════════════════════════════ */
+    #timeline-view { display: none; flex-direction: column; height: calc(100vh - 90px); overflow: hidden; }
+
+    /* River track */
+    .tl-track-wrap {
+      flex-shrink: 0;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 2.5rem 2rem 0;
+      cursor: grab;
+      user-select: none;
+      scrollbar-width: thin;
+      scrollbar-color: var(--rule) transparent;
     }
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 0.65rem;
+    .tl-track-wrap:active { cursor: grabbing; }
+    .tl-track-wrap::-webkit-scrollbar { height: 6px; }
+    .tl-track-wrap::-webkit-scrollbar-track { background: transparent; }
+    .tl-track-wrap::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
+
+    .tl-track {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      min-width: max-content;
+      padding-bottom: 1rem;
+      position: relative;
     }
 
-    /* CARD */
-    .card {
+    /* Horizontal spine line */
+    .tl-track::before {
+      content: '';
+      position: absolute;
+      top: 52px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--rule);
+      z-index: 0;
+    }
+
+    /* Each chapter column */
+    .tl-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      cursor: grab;
+    }
+    .tl-col.dragging { opacity: 0.4; cursor: grabbing; }
+    .tl-col.drag-over .tl-chapter-card { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(200,168,32,0.2); }
+
+    /* Connector stem from line to card */
+    .tl-stem {
+      width: 1px;
+      height: 18px;
+      background: var(--rule);
+      flex-shrink: 0;
+    }
+
+    /* Chapter card on the spine */
+    .tl-chapter-card {
+      width: 176px;
       border: 1px solid var(--rule);
       border-radius: 4px;
-      padding: 0.85rem 1rem;
+      padding: 0.65rem 0.75rem;
+      background: var(--bg);
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      position: relative;
+    }
+    .tl-chapter-card:hover { border-color: var(--accent); }
+    .tl-chapter-card.expanded { border-color: var(--gold); background: #FFF9F0; }
+
+    .tl-ch-num { font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.1rem; }
+    .tl-ch-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 0.9rem; line-height: 1.25; }
+    .tl-ch-title.dim { color: var(--faint); }
+    .tl-status-dot { position: absolute; top: 0.5rem; right: 0.5rem; width: 6px; height: 6px; border-radius: 50%; }
+
+    /* Spine sentence preview on card */
+    .tl-spine-preview {
+      font-size: 0.75rem; font-style: italic; color: var(--light);
+      line-height: 1.4; margin-top: 0.4rem;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .tl-spine-preview.empty { font-style: normal; color: #C8C0B0; }
+
+    /* Part band at top of card */
+    .tl-part-band {
+      height: 3px;
+      border-radius: 2px 2px 0 0;
+      margin: -0.65rem -0.75rem 0.5rem;
+    }
+
+    /* ── BRANCH ESSAYS below each chapter ── */
+    .tl-branches {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 0;
+    }
+    .tl-branch-stem {
+      width: 1px;
+      background: var(--rule-light);
+      flex-shrink: 0;
+    }
+    .tl-branch-card {
+      width: 162px;
+      border: 1px dashed var(--rule);
+      border-radius: 3px;
+      padding: 0.45rem 0.6rem;
+      background: var(--bg);
+      font-size: 0.75rem;
+      color: var(--light);
+      line-height: 1.4;
       cursor: pointer;
       transition: border-color 0.15s, background 0.15s;
-      user-select: none;
+      position: relative;
+      margin-top: 0;
     }
+    .tl-branch-card:hover { border-color: var(--accent); background: #F5F2EC; }
+    .tl-branch-card .branch-source {
+      font-size: 0.63rem; color: var(--fainter);
+      letter-spacing: 0.04em; margin-top: 0.2rem;
+    }
+    .tl-branch-card .branch-delete {
+      position: absolute; top: 0.25rem; right: 0.35rem;
+      font-size: 0.65rem; color: var(--rule); cursor: pointer;
+      background: none; border: none; padding: 0; line-height: 1;
+    }
+    .tl-branch-card .branch-delete:hover { color: var(--red); }
+
+    /* Add branch button */
+    .tl-add-branch {
+      width: 162px;
+      border: 1px dashed var(--rule-light);
+      border-radius: 3px;
+      padding: 0.3rem;
+      background: transparent;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.7rem;
+      color: var(--fainter);
+      cursor: pointer;
+      text-align: center;
+      transition: border-color 0.15s, color 0.15s;
+      margin-top: 4px;
+    }
+    .tl-add-branch:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── EXPANDED DETAIL PANEL (below track) ── */
+    .tl-detail {
+      flex: 1;
+      overflow-y: auto;
+      border-top: 1px solid var(--rule-light);
+      padding: 1.25rem 2rem 3rem;
+      display: none;
+    }
+    .tl-detail.open { display: block; }
+    .tl-detail-inner { max-width: 600px; }
+    .tl-detail-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300; font-size: 1.3rem; margin-bottom: 1rem;
+      display: flex; align-items: baseline; gap: 0.75rem;
+    }
+    .tl-detail-num { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .concept-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+    .tag { font-size: 0.7rem; padding: 0.06rem 0.42rem; border: 1px solid var(--rule); border-radius: 20px; color: var(--light); background: var(--bg); }
+    .status-row { display: flex; gap: 0.3rem; margin-top: 0.5rem; }
+    .status-btn { font-family: 'EB Garamond', Georgia, serif; font-size: 0.66rem; padding: 0.1rem 0.42rem; border-radius: 3px; cursor: pointer; border: 1px solid var(--rule); background: transparent; color: var(--faint); transition: all 0.12s; }
+
+    /* ══════════════════════════════════════════
+       CARDS VIEW
+    ══════════════════════════════════════════ */
+    #cards-view { padding: 1.5rem 1.75rem 5rem; }
+    .part-group { margin-bottom: 2rem; }
+    .part-label { font-size: 0.63rem; letter-spacing: 0.13em; text-transform: uppercase; margin-bottom: 0.65rem; padding-bottom: 0.35rem; border-bottom: 1px solid; }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 0.65rem; }
+    .card { border: 1px solid var(--rule); border-radius: 4px; padding: 0.85rem 1rem; cursor: pointer; transition: border-color 0.15s, background 0.15s; user-select: none; }
     .card.open { background: #FFF9F0; border-color: var(--gold); }
     .card-header { display: flex; justify-content: space-between; align-items: flex-start; }
     .card-num { font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.15rem; }
     .card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 1rem; line-height: 1.25; }
     .card-title.dim { color: var(--faint); }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 0.3rem; }
-
-    /* CARD EXPANDED */
+    .card-status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 0.3rem; }
     .card-body { margin-top: 0.75rem; display: none; }
     .card.open .card-body { display: block; }
-    .field-label { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fainter); margin-bottom: 0.28rem; }
-    .spine-display {
-      font-size: 0.88rem; font-style: italic; color: var(--light);
-      line-height: 1.6; cursor: text;
-      border-bottom: 1px dashed var(--rule-light); padding-bottom: 0.25rem;
-      min-height: 1.4rem;
-    }
+    .spine-display { font-size: 0.88rem; font-style: italic; color: var(--light); line-height: 1.6; cursor: text; border-bottom: 1px dashed var(--rule-light); padding-bottom: 0.25rem; min-height: 1.4rem; }
     .spine-display.empty { font-style: normal; color: #C8C0B0; }
-    .spine-edit { display: none; }
-    .spine-edit.active { display: block; }
-    .spine-edit textarea {
-      width: 100%; font-family: 'EB Garamond', Georgia, serif;
-      font-size: 0.88rem; font-style: italic; line-height: 1.55; color: var(--text);
-      border: 1px solid var(--gold); border-radius: 3px;
-      padding: 0.35rem 0.5rem; background: #FFFBE6;
-      resize: vertical; outline: none;
-    }
-    .edit-actions { display: flex; gap: 0.35rem; margin-top: 0.3rem; }
-    .btn {
-      font-family: 'EB Garamond', Georgia, serif; font-size: 0.72rem;
-      padding: 0.15rem 0.5rem; border-radius: 3px; cursor: pointer;
-      border: 1px solid var(--rule); background: transparent; color: var(--faint);
-      transition: all 0.12s;
-    }
-    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .btn.primary:hover { opacity: 0.85; }
-    .btn:not(.primary):hover { background: var(--rule-light); }
-
     .concepts { margin-top: 0.65rem; }
-    .concept-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.28rem; }
-    .tag {
-      font-size: 0.7rem; padding: 0.06rem 0.42rem;
-      border: 1px solid var(--rule); border-radius: 20px;
-      color: var(--light); background: var(--bg);
-    }
 
-    .status-row { display: flex; gap: 0.3rem; margin-top: 0.65rem; }
-    .status-btn {
-      font-family: 'EB Garamond', Georgia, serif; font-size: 0.66rem;
-      padding: 0.1rem 0.42rem; border-radius: 3px; cursor: pointer;
-      border: 1px solid var(--rule); background: transparent; color: var(--faint);
-      transition: all 0.12s;
-    }
-
-    /* SPINE VIEW */
-    .spine-intro {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 300; font-size: 0.95rem; font-style: italic;
-      color: var(--faint); margin-bottom: 1.75rem;
-    }
+    /* ══════════════════════════════════════════
+       SPINE VIEW
+    ══════════════════════════════════════════ */
+    #spine-view { display: none; max-width: 660px; margin: 0 auto; padding: 2rem 1.75rem 5rem; }
+    .spine-intro { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 0.95rem; font-style: italic; color: var(--faint); margin-bottom: 1.75rem; }
     .spine-row { display: flex; gap: 1rem; align-items: stretch; }
     .spine-connector { display: flex; flex-direction: column; align-items: center; width: 24px; flex-shrink: 0; }
     .spine-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 0.72rem; }
@@ -164,20 +251,18 @@
     .spine-ch-header { display: flex; gap: 0.5rem; align-items: baseline; margin-bottom: 0.15rem; }
     .spine-ch-num { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; }
     .spine-ch-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 0.92rem; color: var(--text); }
-    .spine-sentence {
-      font-size: 0.9rem; font-style: italic; color: var(--light);
-      line-height: 1.6; cursor: text;
-    }
+    .spine-sentence { font-size: 0.9rem; font-style: italic; color: var(--light); line-height: 1.6; cursor: text; }
     .spine-sentence.empty { font-style: normal; color: #C8C0B0; }
-    .spine-edit-wrap { display: none; }
-    .spine-edit-wrap.active { display: block; }
-    .spine-edit-wrap textarea {
-      width: 100%; font-family: 'EB Garamond', Georgia, serif;
-      font-size: 0.9rem; font-style: italic; line-height: 1.55; color: var(--text);
-      border: 1px solid var(--gold); border-radius: 3px;
-      padding: 0.35rem 0.5rem; background: #FFFBE6;
-      resize: vertical; outline: none;
-    }
+
+    /* ── ADD BRANCH MODAL ── */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(46,42,36,0.35); z-index: 500; align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 1.25rem 1.5rem; width: 340px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .modal h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 1rem; margin-bottom: 0.75rem; color: var(--accent); }
+    .modal label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fainter); display: block; margin-bottom: 0.25rem; margin-top: 0.65rem; }
+    .modal input, .modal textarea { font-family: 'EB Garamond', Georgia, serif; font-size: 0.9rem; color: var(--text); border: 1px solid var(--rule); border-radius: 3px; padding: 0.35rem 0.5rem; background: #FAFAF8; width: 100%; outline: none; font-style: normal; }
+    .modal input:focus, .modal textarea:focus { border-color: var(--accent); }
+    .modal-actions { display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: flex-end; }
   </style>
 </head>
 <body>
@@ -188,6 +273,7 @@
     <span class="header-sub">Book Planner</span>
   </div>
   <div class="view-tabs">
+    <button class="view-tab" onclick="switchView('timeline')">Timeline</button>
     <button class="view-tab active" onclick="switchView('cards')">Cards</button>
     <button class="view-tab" onclick="switchView('spine')">Spine</button>
   </div>
@@ -200,28 +286,59 @@
   <span class="legend-hint" id="legend-hint">Click to expand · click spine to edit</span>
 </div>
 
-<div id="body"></div>
+<!-- TIMELINE -->
+<div id="timeline-view">
+  <div class="tl-track-wrap" id="tl-track-wrap">
+    <div class="tl-track" id="tl-track"></div>
+  </div>
+  <div class="tl-detail" id="tl-detail">
+    <div class="tl-detail-inner" id="tl-detail-inner"></div>
+  </div>
+</div>
+
+<!-- CARDS -->
+<div id="cards-view"></div>
+
+<!-- SPINE -->
 <div id="spine-view">
   <p class="spine-intro">The argument of the book, one sentence per chapter.</p>
   <div id="spine-rows"></div>
 </div>
 
+<!-- ADD BRANCH MODAL -->
+<div class="modal-overlay" id="branch-modal">
+  <div class="modal">
+    <h3 id="modal-title">Add branch essay</h3>
+    <label>Essay / idea title</label>
+    <input type="text" id="branch-idea" placeholder="e.g. The BJJ hierarchy story">
+    <label>Source</label>
+    <input type="text" id="branch-source" placeholder="e.g. Recording 12, Google Doc: Hierarchies">
+    <div class="modal-actions">
+      <button class="btn" onclick="closeModal()">Cancel</button>
+      <button class="btn primary" onclick="saveBranch()">Add</button>
+    </div>
+  </div>
+</div>
+
 <script>
-const CHAPTERS = [
-  { id:0,  part:0, num:"P",  title:"Preface",                          status:"written",     spine:"These aren't conclusions to adopt — they're a map someone else drew.",                                              concepts:["lived experience","LLM as medium","invitation"] },
-  { id:1,  part:1, num:"1",  title:"The Ego as Process",               status:"written",     spine:"The ego isn't a thing — it's the filter, the accumulated weight of every judgment your mind has learned to make.", concepts:["ego as mechanism","filter","valence","conditioning"] },
-  { id:2,  part:1, num:"2",  title:"The Filter in Action",             status:"written",     spine:"The crest and the trough are fused — feed one and you feed both.",                                                  concepts:["charged beliefs","oscillation","three costs","dissolution"] },
-  { id:3,  part:1, num:"3",  title:"The Status Game",                  status:"in-progress", spine:"The filter is organized around status because for most of evolutionary history, status was life.",                  concepts:["hierarchy","pack animal","disruption","closed heart"] },
-  { id:4,  part:1, num:"4",  title:"The Addiction Engine",             status:"placeholder", spine:"",                                                                                                                   concepts:["dopamine loop","action vs inaction"] },
-  { id:5,  part:2, num:"5",  title:"The Curator",                      status:"placeholder", spine:"",                                                                                                                   concepts:["active selection","identity construction","status signals"] },
-  { id:6,  part:2, num:"6",  title:"Why Wisdom Gets Filtered Out",     status:"written",     spine:"The ego checks credentials before it checks content.",                                                              concepts:["source credibility","shadow work","self-image","diamond metaphor"] },
-  { id:7,  part:2, num:"7",  title:"The Realms",                       status:"placeholder", spine:"",                                                                                                                   concepts:["Buddhist realms","self-reinforcing worlds","palace & prison"] },
-  { id:8,  part:3, num:"8",  title:"Making the World Conform",         status:"placeholder", spine:"",                                                                                                                   concepts:["first path","treadmill","circumstance manipulation"] },
-  { id:9,  part:3, num:"9",  title:"Dissolving the Beliefs",           status:"placeholder", spine:"",                                                                                                                   concepts:["second path","nihilism fear","feels like dying","lightness"] },
-  { id:10, part:3, num:"10", title:"De-objectifying the Self",         status:"placeholder", spine:"",                                                                                                                   concepts:["anatta","perceiver","stream entry"] },
-  { id:11, part:4, num:"11", title:"The Trap on Both Paths",           status:"placeholder", spine:"",                                                                                                                   concepts:["spiritual materialism","symmetry","pride-lined","resentment-lined"] },
-  { id:12, part:4, num:"12", title:"The Spirit Path vs. The Status Path", status:"placeholder", spine:"",                                                                                                               concepts:["the fork","servant leader","diagnostic signs"] },
-  { id:13, part:4, num:"13", title:"What Opening the Heart Actually Means", status:"placeholder", spine:"",                                                                                                             concepts:["not sentiment","arrival","discernment restored"] },
+// ══════════════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════════════
+const DEFAULTS = [
+  { id:0,  part:0, num:"P",  title:"Preface",                             status:"written",     spine:"These aren't conclusions to adopt — they're a map someone else drew.",                                              concepts:["lived experience","LLM as medium","invitation"],         branches:[] },
+  { id:1,  part:1, num:"1",  title:"The Ego as Process",                  status:"written",     spine:"The ego isn't a thing — it's the filter, the accumulated weight of every judgment your mind has learned to make.", concepts:["ego as mechanism","filter","valence","conditioning"],      branches:[] },
+  { id:2,  part:1, num:"2",  title:"The Filter in Action",                status:"written",     spine:"The crest and the trough are fused — feed one and you feed both.",                                                  concepts:["charged beliefs","oscillation","three costs","dissolution"],branches:[] },
+  { id:3,  part:1, num:"3",  title:"The Status Game",                     status:"in-progress", spine:"The filter is organized around status because for most of evolutionary history, status was life.",                  concepts:["hierarchy","pack animal","disruption","closed heart"],     branches:[{id:"b1",idea:"The BJJ hierarchy story",source:"Recording 12"},{id:"b2",idea:"Marty McFly / LOTR status disruption",source:"Recording 12"},{id:"b3",idea:"The race story (T and A)",source:"Recording 13"}] },
+  { id:4,  part:1, num:"4",  title:"The Addiction Engine",                status:"placeholder", spine:"",                                                                                                                   concepts:["dopamine loop","action vs inaction"],                      branches:[{id:"b4",idea:"Action vs Inaction",source:"Google Doc"}] },
+  { id:5,  part:2, num:"5",  title:"The Curator",                         status:"placeholder", spine:"",                                                                                                                   concepts:["active selection","identity construction","status signals"],branches:[] },
+  { id:6,  part:2, num:"6",  title:"Why Wisdom Gets Filtered Out",        status:"written",     spine:"The ego checks credentials before it checks content.",                                                              concepts:["source credibility","shadow work","self-image","diamond metaphor"],branches:[] },
+  { id:7,  part:2, num:"7",  title:"The Realms",                          status:"placeholder", spine:"",                                                                                                                   concepts:["Buddhist realms","self-reinforcing worlds","palace & prison"],branches:[{id:"b5",idea:"The Desert, the Palace, and the Prison",source:"Google Doc 2025"},{id:"b6",idea:"Gods and Lions",source:"Google Doc"}] },
+  { id:8,  part:3, num:"8",  title:"Making the World Conform",            status:"placeholder", spine:"",                                                                                                                   concepts:["first path","treadmill","circumstance manipulation"],      branches:[{id:"b7",idea:"The Racing Analogy",source:"Google Doc"}] },
+  { id:9,  part:3, num:"9",  title:"Dissolving the Beliefs",              status:"placeholder", spine:"",                                                                                                                   concepts:["second path","nihilism fear","feels like dying","lightness"],branches:[] },
+  { id:10, part:3, num:"10", title:"De-objectifying the Self",            status:"placeholder", spine:"",                                                                                                                   concepts:["anatta","perceiver","stream entry"],                       branches:[] },
+  { id:11, part:4, num:"11", title:"The Trap on Both Paths",              status:"placeholder", spine:"",                                                                                                                   concepts:["spiritual materialism","symmetry","pride-lined","resentment-lined"],branches:[{id:"b8",idea:"Why Envy and Resentment Disappear",source:"Google Doc"},{id:"b9",idea:"Energy, Shields, and Transmutation",source:"Google Doc"}] },
+  { id:12, part:4, num:"12", title:"The Spirit Path vs. The Status Path", status:"placeholder", spine:"",                                                                                                                   concepts:["the fork","servant leader","diagnostic signs"],            branches:[{id:"b10",idea:"Jesus / Obi-Wan servant leader resolution",source:"Recording 14"},{id:"b11",idea:"Signs",source:"Google Doc"}] },
+  { id:13, part:4, num:"13", title:"What Opening the Heart Actually Means",status:"placeholder",spine:"",                                                                                                                   concepts:["not sentiment","arrival","discernment restored"],          branches:[{id:"b12",idea:"Openness to All",source:"Google Doc"},{id:"b13",idea:"Gods and Lions",source:"Google Doc"}] },
 ];
 
 const PARTS = [
@@ -231,193 +348,343 @@ const PARTS = [
   { label:"Part III — The Paths",      color:"#4A7A9B" },
   { label:"Part IV — The Heart",       color:"#B85450" },
 ];
+const SC = { written:"#5A8A5A", "in-progress":"#C8A820", placeholder:"#B0A898" };
+const SBG = { written:"rgba(90,138,90,0.08)", "in-progress":"rgba(200,168,32,0.08)", placeholder:"rgba(176,168,152,0.06)" };
 
-const STATUS_COLORS = { written:"#5A8A5A", "in-progress":"#C8A820", placeholder:"#B0A898" };
-const STATUS_BG     = { written:"rgba(90,138,90,0.08)", "in-progress":"rgba(200,168,32,0.08)", placeholder:"rgba(176,168,152,0.06)" };
-
-let state = JSON.parse(localStorage.getItem('book-planner') || 'null') || CHAPTERS.map(c => ({...c}));
+let state = JSON.parse(localStorage.getItem('book-planner-v2') || 'null') || DEFAULTS.map(c => ({...c}));
+let currentView = 'cards';
 let openCard = null;
 let editingId = null;
-let currentView = 'cards';
+let expandedTl = null;
+let modalChapterId = null;
+let dragSrcId = null;
 
-function save() { localStorage.setItem('book-planner', JSON.stringify(state)); }
-function getChapter(id) { return state.find(c => c.id === id); }
-function updateChapter(id, patch) { Object.assign(getChapter(id), patch); save(); }
+function save() { localStorage.setItem('book-planner-v2', JSON.stringify(state)); }
+function ch(id) { return state.find(c => c.id === id); }
+function upd(id, patch) { Object.assign(ch(id), patch); save(); }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-// ── CARD VIEW ────────────────────────────────────────────────────────
+// ══════════════════════════════════════════════════
+// TIMELINE VIEW
+// ══════════════════════════════════════════════════
+function renderTimeline() {
+  const track = document.getElementById('tl-track');
+  track.innerHTML = state.map(c => {
+    const pc = PARTS[c.part].color;
+    return `
+    <div class="tl-col" draggable="true" data-tlid="${c.id}">
+      <div class="tl-stem"></div>
+      <div class="tl-chapter-card ${expandedTl===c.id?'expanded':''}" data-tlcard="${c.id}" style="border-top: 3px solid ${pc}">
+        <div class="tl-status-dot" style="background:${SC[c.status]}"></div>
+        <div class="tl-ch-num" style="color:${pc}">Ch. ${esc(c.num)}</div>
+        <div class="tl-ch-title ${c.status==='placeholder'?'dim':''}">${esc(c.title)}</div>
+        <div class="tl-spine-preview ${c.spine?'':'empty'}">${c.spine ? esc(c.spine) : 'No spine yet'}</div>
+      </div>
+      <div class="tl-branches" data-tlbranches="${c.id}">
+        <div class="tl-branch-stem" style="height:${c.branches.length?'14px':'8px'}"></div>
+        ${c.branches.map(b => `
+          <div class="tl-branch-card" data-branchid="${b.id}" data-chapid="${c.id}">
+            <button class="branch-delete" data-delbranch="${b.id}" data-chapid="${c.id}" title="Remove">✕</button>
+            ${esc(b.idea)}
+            ${b.source ? `<div class="branch-source">${esc(b.source)}</div>` : ''}
+            <div class="tl-branch-stem" style="height:6px;margin-top:6px"></div>
+          </div>
+        `).join('')}
+        <button class="tl-add-branch" data-addbranch="${c.id}">+ branch</button>
+      </div>
+    </div>`;
+  }).join('');
 
-function renderCards() {
-  const body = document.getElementById('body');
-  const groups = [0,1,2,3,4].map(p => state.filter(c => c.part === p));
-  body.innerHTML = groups.map((chs, p) => `
-    <div class="part-group">
-      <div class="part-label" style="color:${PARTS[p].color};border-color:${PARTS[p].color}22">${PARTS[p].label}</div>
-      <div class="cards-grid">${chs.map(ch => renderCard(ch, p)).join('')}</div>
-    </div>`).join('');
-  attachCardListeners();
+  attachTimelineListeners();
+  renderDetail();
+  initDragScroll();
 }
 
-function renderCard(ch, p) {
-  const isOpen = openCard === ch.id;
-  const isEditing = editingId === ch.id;
-  return `
-  <div class="card ${isOpen ? 'open' : ''}" style="background:${isOpen ? '#FFF9F0' : STATUS_BG[ch.status]}" data-id="${ch.id}">
-    <div class="card-header">
-      <div>
-        <div class="card-num" style="color:${PARTS[p].color}">Ch. ${ch.num}</div>
-        <div class="card-title ${ch.status === 'placeholder' ? 'dim' : ''}">${ch.title}</div>
-      </div>
-      <div class="status-dot" style="background:${STATUS_COLORS[ch.status]}"></div>
-    </div>
-    <div class="card-body">
-      <div class="field-label">Spine sentence</div>
-      <div class="spine-display ${ch.spine ? '' : 'empty'}" data-spine-display="${ch.id}">
-        ${ch.spine || 'Click to write the spine sentence…'}
-      </div>
-      <div class="spine-edit ${isEditing ? 'active' : ''}" data-spine-edit="${ch.id}">
-        <textarea rows="3" data-spine-ta="${ch.id}">${ch.spine || ''}</textarea>
-        <div class="edit-actions">
-          <button class="btn primary" data-save="${ch.id}">Save</button>
-          <button class="btn" data-cancel="${ch.id}">Cancel</button>
-        </div>
-      </div>
-      ${ch.concepts.length ? `
-      <div class="concepts">
-        <div class="field-label">Concepts</div>
-        <div class="concept-tags">${ch.concepts.map(c => `<span class="tag">${c}</span>`).join('')}</div>
-      </div>` : ''}
-      <div class="status-row">
-        ${['written','in-progress','placeholder'].map(s => `
-          <button class="status-btn" data-setstatus="${ch.id}" data-status="${s}"
-            style="border-color:${ch.status===s?STATUS_COLORS[s]:'var(--rule)'};background:${ch.status===s?STATUS_COLORS[s]:'transparent'};color:${ch.status===s?'#fff':'var(--faint)'}"
-          >${s==='in-progress'?'In progress':s.charAt(0).toUpperCase()+s.slice(1)}</button>`).join('')}
-      </div>
-    </div>
-  </div>`;
-}
+function attachTimelineListeners() {
+  // Chapter card click → expand detail
+  document.querySelectorAll('[data-tlcard]').forEach(el => {
+    el.addEventListener('click', e => {
+      if (e.target.closest('[data-addbranch]') || e.target.closest('[data-delbranch]')) return;
+      const id = +el.dataset.tlcard;
+      expandedTl = expandedTl === id ? null : id;
+      renderTimeline();
+    });
+  });
 
-function attachCardListeners() {
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', e => {
-      const id = +card.dataset.id;
-      // spine display click → edit
-      if (e.target.closest('[data-spine-display]')) {
-        e.stopPropagation();
-        editingId = id;
-        renderCards();
-        setTimeout(() => document.querySelector(`[data-spine-ta="${id}"]`)?.focus(), 10);
-        return;
-      }
-      // save button
-      const saveBtn = e.target.closest('[data-save]');
-      if (saveBtn) {
-        e.stopPropagation();
-        const val = document.querySelector(`[data-spine-ta="${id}"]`)?.value.trim() || '';
-        updateChapter(id, { spine: val });
-        editingId = null;
-        renderCards();
-        return;
-      }
-      // cancel button
-      if (e.target.closest('[data-cancel]')) {
-        e.stopPropagation();
-        editingId = null;
-        renderCards();
-        return;
-      }
-      // status button
-      const statusBtn = e.target.closest('[data-setstatus]');
-      if (statusBtn) {
-        e.stopPropagation();
-        updateChapter(id, { status: statusBtn.dataset.status });
-        renderCards();
-        return;
-      }
-      // toggle open
-      if (!e.target.closest('.card-body')) {
-        openCard = openCard === id ? null : id;
-        editingId = null;
-        renderCards();
-      }
+  // Add branch
+  document.querySelectorAll('[data-addbranch]').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); openModal(+btn.dataset.addbranch); });
+  });
+
+  // Delete branch
+  document.querySelectorAll('[data-delbranch]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const chapId = +btn.dataset.chapid;
+      const branchId = btn.dataset.delbranch;
+      const c = ch(chapId);
+      c.branches = c.branches.filter(b => b.id !== branchId);
+      save(); renderTimeline();
+    });
+  });
+
+  // Drag to reorder chapters
+  document.querySelectorAll('.tl-col').forEach(col => {
+    col.addEventListener('dragstart', e => {
+      dragSrcId = +col.dataset.tlid;
+      col.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    col.addEventListener('dragend', () => { col.classList.remove('dragging'); document.querySelectorAll('.tl-col').forEach(c => c.classList.remove('drag-over')); });
+    col.addEventListener('dragover', e => { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; col.classList.add('drag-over'); });
+    col.addEventListener('dragleave', () => col.classList.remove('drag-over'));
+    col.addEventListener('drop', e => {
+      e.preventDefault();
+      col.classList.remove('drag-over');
+      const targetId = +col.dataset.tlid;
+      if (dragSrcId === null || dragSrcId === targetId) return;
+      const srcIdx = state.findIndex(c => c.id === dragSrcId);
+      const tgtIdx = state.findIndex(c => c.id === targetId);
+      const [moved] = state.splice(srcIdx, 1);
+      state.splice(tgtIdx, 0, moved);
+      save(); renderTimeline();
     });
   });
 }
 
-// ── SPINE VIEW ───────────────────────────────────────────────────────
+function renderDetail() {
+  const panel = document.getElementById('tl-detail');
+  const inner = document.getElementById('tl-detail-inner');
+  if (expandedTl === null) { panel.classList.remove('open'); return; }
+  const c = ch(expandedTl);
+  if (!c) { panel.classList.remove('open'); return; }
+  const pc = PARTS[c.part].color;
+  const isEditing = editingId === c.id;
 
-function renderSpine() {
+  inner.innerHTML = `
+    <div class="tl-detail-title">
+      <span class="tl-detail-num" style="color:${pc}">${esc(PARTS[c.part].label)} · Ch. ${esc(c.num)}</span>
+      ${esc(c.title)}
+    </div>
+    <div class="field-label">Spine sentence</div>
+    <div id="tl-spine-display" style="display:${isEditing?'none':'block'}" class="spine-display ${c.spine?'':'empty'}"
+      onclick="startEditDetail(${c.id})">
+      ${c.spine ? esc(c.spine) : 'Click to write the spine sentence…'}
+    </div>
+    <div id="tl-spine-edit" style="display:${isEditing?'block':'none'}">
+      <textarea rows="3" id="tl-spine-ta">${esc(c.spine||'')}</textarea>
+      <div class="edit-actions">
+        <button class="btn primary" onclick="saveDetailSpine(${c.id})">Save</button>
+        <button class="btn" onclick="cancelDetailEdit()">Cancel</button>
+      </div>
+    </div>
+    ${c.concepts.length ? `
+    <div class="concepts" style="margin-top:0.75rem">
+      <div class="field-label">Concepts</div>
+      <div class="concept-tags">${c.concepts.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+    </div>` : ''}
+    <div class="status-row" style="margin-top:0.75rem">
+      ${['written','in-progress','placeholder'].map(s=>`
+        <button class="status-btn" onclick="setDetailStatus(${c.id},'${s}')"
+          style="border-color:${c.status===s?SC[s]:'var(--rule)'};background:${c.status===s?SC[s]:'transparent'};color:${c.status===s?'#fff':'var(--faint)'}">
+          ${s==='in-progress'?'In progress':s.charAt(0).toUpperCase()+s.slice(1)}
+        </button>`).join('')}
+    </div>
+    ${c.branches.length ? `
+    <div style="margin-top:1rem">
+      <div class="field-label">Branch essays</div>
+      ${c.branches.map(b=>`
+        <div style="font-size:0.85rem;color:var(--light);padding:0.3rem 0;border-bottom:1px solid var(--rule-light);display:flex;justify-content:space-between;align-items:baseline">
+          <span>${esc(b.idea)} ${b.source?`<span style="font-size:0.72rem;color:var(--fainter)">— ${esc(b.source)}</span>`:''}</span>
+        </div>`).join('')}
+    </div>` : ''}
+  `;
+  panel.classList.add('open');
+  if (isEditing) setTimeout(() => document.getElementById('tl-spine-ta')?.focus(), 10);
+}
+
+function startEditDetail(id) { editingId = id; renderDetail(); }
+function cancelDetailEdit() { editingId = null; renderDetail(); }
+function saveDetailSpine(id) {
+  const val = document.getElementById('tl-spine-ta')?.value.trim() || '';
+  upd(id, { spine: val });
+  editingId = null;
+  renderTimeline();
+}
+function setDetailStatus(id, s) { upd(id, { status: s }); renderTimeline(); }
+
+// ── DRAG-TO-SCROLL ──
+function initDragScroll() {
+  const wrap = document.getElementById('tl-track-wrap');
+  let isDown = false, startX, scrollLeft;
+  wrap.addEventListener('mousedown', e => {
+    if (e.target.closest('[data-tlcard],[data-addbranch],[data-delbranch],[data-branchid],[draggable]')) return;
+    isDown = true; startX = e.pageX - wrap.offsetLeft; scrollLeft = wrap.scrollLeft;
+    wrap.style.cursor = 'grabbing';
+  });
+  wrap.addEventListener('mouseleave', () => { isDown = false; wrap.style.cursor = 'grab'; });
+  wrap.addEventListener('mouseup', () => { isDown = false; wrap.style.cursor = 'grab'; });
+  wrap.addEventListener('mousemove', e => {
+    if (!isDown) return; e.preventDefault();
+    wrap.scrollLeft = scrollLeft - (e.pageX - wrap.offsetLeft - startX);
+  });
+}
+
+// ══════════════════════════════════════════════════
+// BRANCH MODAL
+// ══════════════════════════════════════════════════
+function openModal(chapId) {
+  modalChapterId = chapId;
+  document.getElementById('branch-idea').value = '';
+  document.getElementById('branch-source').value = '';
+  document.getElementById('modal-title').textContent = 'Add branch essay — ' + ch(chapId).title;
+  document.getElementById('branch-modal').classList.add('open');
+  setTimeout(() => document.getElementById('branch-idea').focus(), 30);
+}
+function closeModal() { document.getElementById('branch-modal').classList.remove('open'); modalChapterId = null; }
+function saveBranch() {
+  const idea = document.getElementById('branch-idea').value.trim();
+  if (!idea || modalChapterId === null) return;
+  const source = document.getElementById('branch-source').value.trim();
+  const c = ch(modalChapterId);
+  c.branches.push({ id: 'b' + Date.now(), idea, source });
+  save();
+  closeModal();
+  renderTimeline();
+}
+document.getElementById('branch-modal').addEventListener('click', e => { if (e.target === document.getElementById('branch-modal')) closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeModal();
+    if (editingId !== null) { editingId = null; if (currentView==='timeline') renderDetail(); else if (currentView==='cards') renderCards(); else renderSpineView(); }
+  }
+  if (e.key === 'Enter' && (e.metaKey||e.ctrlKey)) {
+    if (document.getElementById('branch-modal').classList.contains('open')) { saveBranch(); return; }
+    if (editingId !== null) {
+      const id = editingId;
+      const ta = document.querySelector(`[data-spine-ta="${id}"]`) || document.querySelector(`[data-spine-sta="${id}"]`);
+      if (ta) { upd(id, { spine: ta.value.trim() }); editingId = null; currentView==='cards'?renderCards():renderSpineView(); }
+    }
+  }
+});
+
+// ══════════════════════════════════════════════════
+// CARDS VIEW
+// ══════════════════════════════════════════════════
+function renderCards() {
+  const body = document.getElementById('cards-view');
+  const groups = [0,1,2,3,4].map(p => state.filter(c => c.part === p));
+  body.innerHTML = groups.map((chs, p) => `
+    <div class="part-group">
+      <div class="part-label" style="color:${PARTS[p].color};border-color:${PARTS[p].color}22">${PARTS[p].label}</div>
+      <div class="cards-grid">${chs.map(c => renderCard(c, p)).join('')}</div>
+    </div>`).join('');
+  attachCardListeners();
+}
+function renderCard(c, p) {
+  const isOpen = openCard === c.id, isEd = editingId === c.id;
+  return `
+  <div class="card ${isOpen?'open':''}" style="background:${isOpen?'#FFF9F0':SBG[c.status]}" data-id="${c.id}">
+    <div class="card-header">
+      <div>
+        <div class="card-num" style="color:${PARTS[p].color}">Ch. ${esc(c.num)}</div>
+        <div class="card-title ${c.status==='placeholder'?'dim':''}">${esc(c.title)}</div>
+      </div>
+      <div class="card-status-dot" style="background:${SC[c.status]}"></div>
+    </div>
+    <div class="card-body">
+      <div class="field-label">Spine sentence</div>
+      <div class="spine-display ${c.spine?'':'empty'}" data-spine-display="${c.id}">${c.spine?esc(c.spine):'Click to write the spine sentence…'}</div>
+      <div style="display:${isEd?'block':'none'}" data-spine-edit="${c.id}">
+        <textarea rows="3" data-spine-ta="${c.id}">${esc(c.spine||'')}</textarea>
+        <div class="edit-actions">
+          <button class="btn primary" data-save="${c.id}">Save</button>
+          <button class="btn" data-cancel="${c.id}">Cancel</button>
+        </div>
+      </div>
+      ${c.concepts.length?`<div class="concepts"><div class="field-label" style="margin-top:0.65rem">Concepts</div><div class="concept-tags">${c.concepts.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></div>`:''}
+      <div class="status-row">
+        ${['written','in-progress','placeholder'].map(s=>`
+          <button class="status-btn" data-setstatus="${c.id}" data-status="${s}"
+            style="border-color:${c.status===s?SC[s]:'var(--rule)'};background:${c.status===s?SC[s]:'transparent'};color:${c.status===s?'#fff':'var(--faint)'}">
+            ${s==='in-progress'?'In progress':s.charAt(0).toUpperCase()+s.slice(1)}</button>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+function attachCardListeners() {
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', e => {
+      const id = +card.dataset.id;
+      if (e.target.closest('[data-spine-display]')) { e.stopPropagation(); editingId = id; renderCards(); setTimeout(() => document.querySelector(`[data-spine-ta="${id}"]`)?.focus(), 10); return; }
+      const saveBtn = e.target.closest('[data-save]');
+      if (saveBtn) { e.stopPropagation(); upd(id, { spine: document.querySelector(`[data-spine-ta="${id}"]`)?.value.trim()||'' }); editingId = null; renderCards(); return; }
+      if (e.target.closest('[data-cancel]')) { e.stopPropagation(); editingId = null; renderCards(); return; }
+      const sb = e.target.closest('[data-setstatus]');
+      if (sb) { e.stopPropagation(); upd(id, { status: sb.dataset.status }); renderCards(); return; }
+      if (!e.target.closest('.card-body')) { openCard = openCard===id?null:id; editingId = null; renderCards(); }
+    });
+  });
+}
+
+// ══════════════════════════════════════════════════
+// SPINE VIEW
+// ══════════════════════════════════════════════════
+function renderSpineView() {
   const container = document.getElementById('spine-rows');
-  container.innerHTML = state.map((ch, i) => {
-    const isEditing = editingId === ch.id;
+  container.innerHTML = state.map((c, i) => {
+    const isEd = editingId === c.id;
     return `
     <div class="spine-row">
       <div class="spine-connector">
-        <div class="spine-dot" style="background:${STATUS_COLORS[ch.status]}"></div>
+        <div class="spine-dot" style="background:${SC[c.status]}"></div>
         ${i < state.length-1 ? '<div class="spine-line"></div>' : ''}
       </div>
       <div class="spine-content">
         <div class="spine-ch-header">
-          <span class="spine-ch-num" style="color:${PARTS[ch.part].color}">Ch. ${ch.num}</span>
-          <span class="spine-ch-title">${ch.title}</span>
+          <span class="spine-ch-num" style="color:${PARTS[c.part].color}">Ch. ${esc(c.num)}</span>
+          <span class="spine-ch-title">${esc(c.title)}</span>
         </div>
-        <div class="spine-sentence ${ch.spine?'':'empty'}" data-spine-s="${ch.id}" style="display:${isEditing?'none':'block'}">
-          ${ch.spine || '— not yet written'}
-        </div>
-        <div class="spine-edit-wrap ${isEditing?'active':''}" data-spine-ew="${ch.id}">
-          <textarea rows="2" data-spine-sta="${ch.id}">${ch.spine||''}</textarea>
+        <div class="spine-sentence ${c.spine?'':'empty'}" data-spine-s="${c.id}" style="display:${isEd?'none':'block'}">${c.spine?esc(c.spine):'— not yet written'}</div>
+        <div style="display:${isEd?'block':'none'}">
+          <textarea rows="2" data-spine-sta="${c.id}">${esc(c.spine||'')}</textarea>
           <div class="edit-actions">
-            <button class="btn primary" data-ssave="${ch.id}">Save</button>
-            <button class="btn" data-scancel="${ch.id}">Cancel</button>
+            <button class="btn primary" data-ssave="${c.id}">Save</button>
+            <button class="btn" data-scancel="${c.id}">Cancel</button>
           </div>
         </div>
       </div>
     </div>`;
   }).join('');
-
   container.querySelectorAll('[data-spine-s]').forEach(el => {
-    el.addEventListener('click', () => {
-      editingId = +el.dataset.spineS;
-      renderSpine();
-      setTimeout(() => document.querySelector(`[data-spine-sta="${editingId}"]`)?.focus(), 10);
-    });
+    el.addEventListener('click', () => { editingId = +el.dataset.spineS; renderSpineView(); setTimeout(() => document.querySelector(`[data-spine-sta="${editingId}"]`)?.focus(), 10); });
   });
   container.querySelectorAll('[data-ssave]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = +btn.dataset.ssave;
-      const val = document.querySelector(`[data-spine-sta="${id}"]`)?.value.trim() || '';
-      updateChapter(id, { spine: val });
-      editingId = null;
-      renderSpine();
-    });
+    btn.addEventListener('click', () => { upd(+btn.dataset.ssave, { spine: document.querySelector(`[data-spine-sta="${btn.dataset.ssave}"]`)?.value.trim()||'' }); editingId = null; renderSpineView(); });
   });
   container.querySelectorAll('[data-scancel]').forEach(btn => {
-    btn.addEventListener('click', () => { editingId = null; renderSpine(); });
+    btn.addEventListener('click', () => { editingId = null; renderSpineView(); });
   });
 }
 
-// ── TEXTAREA KEYBOARD SHORTCUTS ──────────────────────────────────────
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && editingId !== null) { editingId = null; currentView === 'cards' ? renderCards() : renderSpine(); }
-  if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && editingId !== null) {
-    const id = editingId;
-    const ta = document.querySelector(`[data-spine-ta="${id}"]`) || document.querySelector(`[data-spine-sta="${id}"]`);
-    if (ta) { updateChapter(id, { spine: ta.value.trim() }); editingId = null; currentView === 'cards' ? renderCards() : renderSpine(); }
-  }
-});
-
-// ── VIEW SWITCH ──────────────────────────────────────────────────────
+// ══════════════════════════════════════════════════
+// VIEW SWITCH
+// ══════════════════════════════════════════════════
 function switchView(v) {
-  currentView = v;
-  editingId = null;
-  document.querySelectorAll('.view-tab').forEach(t => t.classList.toggle('active', t.textContent.toLowerCase() === v));
-  document.getElementById('body').style.display = v === 'cards' ? 'block' : 'none';
-  document.getElementById('spine-view').style.display = v === 'spine' ? 'block' : 'none';
-  document.getElementById('legend-hint').textContent = v === 'cards' ? 'Click to expand · click spine to edit' : 'Click any sentence to edit';
-  v === 'cards' ? renderCards() : renderSpine();
+  currentView = v; editingId = null;
+  document.querySelectorAll('.view-tab').forEach(t => t.classList.toggle('active', t.textContent.toLowerCase().startsWith(v.slice(0,4))));
+  document.getElementById('timeline-view').style.display = v==='timeline' ? 'flex' : 'none';
+  document.getElementById('cards-view').style.display    = v==='cards'    ? 'block' : 'none';
+  document.getElementById('spine-view').style.display    = v==='spine'    ? 'block' : 'none';
+  const hints = { timeline:'Drag to reorder · click card for detail · + branch to attach essays', cards:'Click to expand · click spine to edit', spine:'Click any sentence to edit' };
+  document.getElementById('legend-hint').textContent = hints[v];
+  if (v==='timeline') renderTimeline();
+  else if (v==='cards') renderCards();
+  else renderSpineView();
 }
 
-// ── INIT ─────────────────────────────────────────────────────────────
-renderCards();
+// INIT
+switchView('cards');
 </script>
 </body>
 </html>
