@@ -6,6 +6,79 @@
   <meta name="robots" content="noindex, nofollow">
   <title>The Status Game — The Filter & The Heart</title>
   <link rel="stylesheet" href="/m4r7k9/assets/style.css">
+  <style>
+    .continuity-block {
+      background: #F3F0EB;
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      border-radius: 3px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      font-size: 0.88rem;
+      color: var(--light-text);
+      line-height: 1.6;
+    }
+    .continuity-block .cb-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .overview-block {
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      font-size: 0.88rem;
+      color: var(--light-text);
+      line-height: 1.7;
+    }
+    .overview-block .ob-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--faint-text);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .overview-block p { margin-bottom: 0.75rem; }
+    .overview-block p:last-child { margin-bottom: 0; }
+    .branch-list {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--rule);
+    }
+    .branch-list .bl-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--faint-text);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .branch-list ul { list-style: none; }
+    .branch-list li {
+      font-size: 0.82rem;
+      color: var(--faint-text);
+      padding: 0.15rem 0;
+      font-style: italic;
+    }
+    .branch-list li::before { content: '↗ '; font-style: normal; }
+    .in-progress-badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(200,168,32,0.12);
+      color: #8A7010;
+      border: 1px solid rgba(200,168,32,0.3);
+      border-radius: 3px;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
 </head>
 <body>
   <button class="mobile-nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰ Contents</button>
@@ -20,8 +93,38 @@
     </nav>
     <div class="content-wrap">
       <main>
-        <div class="essay-meta"><span class="part-label">Part I — The Machine · Chapter 3</span><h1>The Status Game</h1><p style="color: var(--faint-text); font-style: italic; margin-top: 1rem;">This chapter is in progress.</p></div>
-        <div class="essay-nav"><a href="/m4r7k9/essays/02-the-filter-in-action.html">← The Filter in Action</a><a href="/m4r7k9/essays/04-placeholder.html">Next: The Addiction Engine →</a></div>
+        <div class="essay-meta">
+          <span class="part-label">Part I — The Machine · Chapter 3</span>
+          <h1>The Status Game</h1>
+        </div>
+
+        <div class="in-progress-badge">In progress</div>
+
+        <div class="continuity-block">
+          <span class="cb-label">Coming from Chapter 2</span>
+          Chapter 2 showed that the filter's charged poles — positive and negative valence — are two ends of the same force. Feed the positive side and you feed the negative side too. But it left a question unanswered: why is the filter shaped this way? Why do pride and shame, gain and loss, feel so urgent? This chapter answers that. The filter has the shape it does because it was built to track status — and for most of evolutionary history, status was survival.
+        </div>
+
+        <div class="overview-block">
+          <span class="ob-label">Chapter overview</span>
+          <p>We begin with something you already know but have never quite named: the constant low-level monitoring of how you're landing with the people around you. The micro-signals — who speaks first, who defers, whose joke lands, who gets interrupted. This isn't paranoia. It's the filter doing exactly what it was built to do.</p>
+          <p>The filter is organized around status because the pack animal that became you needed status to survive. Not metaphorically — literally. Standing in the group determined access to food, mates, protection. Pride is the felt sense of status gained. Shame is the felt sense of status lost. The oscillation from Chapter 2 isn't random; it runs along a status axis.</p>
+          <p>This reframes the entire emotional landscape. Resentment, envy, validation-seeking, the need to be right, the sting of being corrected in public — all of these are the status-tracking system doing its job. They aren't character flaws. They're a very old mechanism running in a world it wasn't designed for.</p>
+          <p>The chapter closes with one unanswered question: if status determines what the filter keeps and what it discards, who decides which sources of status get accepted? That question points forward to Chapter 5.</p>
+          <div class="branch-list">
+            <span class="bl-label">Branch essays (planned)</span>
+            <ul>
+              <li>The BJJ hierarchy story — the micro-signals dance in a physical space</li>
+              <li>Marty McFly / LOTR — status disruption as narrative engine</li>
+              <li>The race story — a personal example of status and its costs</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="essay-nav">
+          <a href="/m4r7k9/essays/02-the-filter-in-action.html">← The Filter in Action</a>
+          <a href="/m4r7k9/essays/04-placeholder.html">Next: The Addiction Engine →</a>
+        </div>
       </main>
       <footer>Written with the help of Claude. Authority comes from lived experience, not credentials.</footer>
     </div>
