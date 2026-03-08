@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Book Planner — The Filter & The Heart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAFAF8;
+      --text: #2E2A24;
+      --light: #6B6357;
+      --faint: #9A9080;
+      --fainter: #B0A898;
+      --rule: #DDD8CE;
+      --rule-light: #EDE9E2;
+      --accent: #7A6A52;
+      --green: #5A8A5A;
+      --gold: #C8A820;
+      --blue: #4A7A9B;
+      --red: #B85450;
+      --sand: #9A9080;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.9rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 1rem; color: var(--accent); letter-spacing: 0.02em; }
+    .header-sub { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-left: 0.75rem; }
+    .view-tabs { display: flex; gap: 0.4rem; }
+    .view-tab {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.2rem 0.65rem; border-radius: 3px; cursor: pointer;
+      border: 1px solid var(--rule); background: transparent; color: var(--faint);
+      transition: all 0.15s;
+    }
+    .view-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* LEGEND */
+    .legend {
+      padding: 0.5rem 1.75rem;
+      border-bottom: 1px solid var(--rule-light);
+      display: flex; gap: 1.25rem; align-items: center;
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.35rem; }
+    .legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .legend-label { font-size: 0.7rem; color: var(--faint); }
+    .legend-hint { margin-left: auto; font-size: 0.7rem; color: #C8C0B0; font-style: italic; }
+
+    /* BODY */
+    #body { padding: 1.5rem 1.75rem 5rem; }
+    #spine-view { display: none; max-width: 660px; margin: 0 auto; padding: 2rem 1.75rem 5rem; }
+
+    /* PART GROUP */
+    .part-group { margin-bottom: 2rem; }
+    .part-label {
+      font-size: 0.63rem; letter-spacing: 0.13em; text-transform: uppercase;
+      margin-bottom: 0.65rem; padding-bottom: 0.35rem;
+      border-bottom: 1px solid;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 0.65rem;
+    }
+
+    /* CARD */
+    .card {
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+    }
+    .card.open { background: #FFF9F0; border-color: var(--gold); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .card-num { font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.15rem; }
+    .card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 1rem; line-height: 1.25; }
+    .card-title.dim { color: var(--faint); }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 0.3rem; }
+
+    /* CARD EXPANDED */
+    .card-body { margin-top: 0.75rem; display: none; }
+    .card.open .card-body { display: block; }
+    .field-label { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fainter); margin-bottom: 0.28rem; }
+    .spine-display {
+      font-size: 0.88rem; font-style: italic; color: var(--light);
+      line-height: 1.6; cursor: text;
+      border-bottom: 1px dashed var(--rule-light); padding-bottom: 0.25rem;
+      min-height: 1.4rem;
+    }
+    .spine-display.empty { font-style: normal; color: #C8C0B0; }
+    .spine-edit { display: none; }
+    .spine-edit.active { display: block; }
+    .spine-edit textarea {
+      width: 100%; font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.88rem; font-style: italic; line-height: 1.55; color: var(--text);
+      border: 1px solid var(--gold); border-radius: 3px;
+      padding: 0.35rem 0.5rem; background: #FFFBE6;
+      resize: vertical; outline: none;
+    }
+    .edit-actions { display: flex; gap: 0.35rem; margin-top: 0.3rem; }
+    .btn {
+      font-family: 'EB Garamond', Georgia, serif; font-size: 0.72rem;
+      padding: 0.15rem 0.5rem; border-radius: 3px; cursor: pointer;
+      border: 1px solid var(--rule); background: transparent; color: var(--faint);
+      transition: all 0.12s;
+    }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.primary:hover { opacity: 0.85; }
+    .btn:not(.primary):hover { background: var(--rule-light); }
+
+    .concepts { margin-top: 0.65rem; }
+    .concept-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.28rem; }
+    .tag {
+      font-size: 0.7rem; padding: 0.06rem 0.42rem;
+      border: 1px solid var(--rule); border-radius: 20px;
+      color: var(--light); background: var(--bg);
+    }
+
+    .status-row { display: flex; gap: 0.3rem; margin-top: 0.65rem; }
+    .status-btn {
+      font-family: 'EB Garamond', Georgia, serif; font-size: 0.66rem;
+      padding: 0.1rem 0.42rem; border-radius: 3px; cursor: pointer;
+      border: 1px solid var(--rule); background: transparent; color: var(--faint);
+      transition: all 0.12s;
+    }
+
+    /* SPINE VIEW */
+    .spine-intro {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300; font-size: 0.95rem; font-style: italic;
+      color: var(--faint); margin-bottom: 1.75rem;
+    }
+    .spine-row { display: flex; gap: 1rem; align-items: stretch; }
+    .spine-connector { display: flex; flex-direction: column; align-items: center; width: 24px; flex-shrink: 0; }
+    .spine-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 0.72rem; }
+    .spine-line { width: 1px; flex: 1; background: var(--rule-light); min-height: 18px; }
+    .spine-content { flex: 1; padding-bottom: 1rem; }
+    .spine-ch-header { display: flex; gap: 0.5rem; align-items: baseline; margin-bottom: 0.15rem; }
+    .spine-ch-num { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .spine-ch-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 0.92rem; color: var(--text); }
+    .spine-sentence {
+      font-size: 0.9rem; font-style: italic; color: var(--light);
+      line-height: 1.6; cursor: text;
+    }
+    .spine-sentence.empty { font-style: normal; color: #C8C0B0; }
+    .spine-edit-wrap { display: none; }
+    .spine-edit-wrap.active { display: block; }
+    .spine-edit-wrap textarea {
+      width: 100%; font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.9rem; font-style: italic; line-height: 1.55; color: var(--text);
+      border: 1px solid var(--gold); border-radius: 3px;
+      padding: 0.35rem 0.5rem; background: #FFFBE6;
+      resize: vertical; outline: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <span class="header-title">The Filter &amp; The Heart</span>
+    <span class="header-sub">Book Planner</span>
+  </div>
+  <div class="view-tabs">
+    <button class="view-tab active" onclick="switchView('cards')">Cards</button>
+    <button class="view-tab" onclick="switchView('spine')">Spine</button>
+  </div>
+</header>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#5A8A5A"></div><span class="legend-label">Written</span></div>
+  <div class="legend-item"><div class="legend-dot" style="background:#C8A820"></div><span class="legend-label">In progress</span></div>
+  <div class="legend-item"><div class="legend-dot" style="background:#B0A898"></div><span class="legend-label">Placeholder</span></div>
+  <span class="legend-hint" id="legend-hint">Click to expand · click spine to edit</span>
+</div>
+
+<div id="body"></div>
+<div id="spine-view">
+  <p class="spine-intro">The argument of the book, one sentence per chapter.</p>
+  <div id="spine-rows"></div>
+</div>
+
+<script>
+const CHAPTERS = [
+  { id:0,  part:0, num:"P",  title:"Preface",                          status:"written",     spine:"These aren't conclusions to adopt — they're a map someone else drew.",                                              concepts:["lived experience","LLM as medium","invitation"] },
+  { id:1,  part:1, num:"1",  title:"The Ego as Process",               status:"written",     spine:"The ego isn't a thing — it's the filter, the accumulated weight of every judgment your mind has learned to make.", concepts:["ego as mechanism","filter","valence","conditioning"] },
+  { id:2,  part:1, num:"2",  title:"The Filter in Action",             status:"written",     spine:"The crest and the trough are fused — feed one and you feed both.",                                                  concepts:["charged beliefs","oscillation","three costs","dissolution"] },
+  { id:3,  part:1, num:"3",  title:"The Status Game",                  status:"in-progress", spine:"The filter is organized around status because for most of evolutionary history, status was life.",                  concepts:["hierarchy","pack animal","disruption","closed heart"] },
+  { id:4,  part:1, num:"4",  title:"The Addiction Engine",             status:"placeholder", spine:"",                                                                                                                   concepts:["dopamine loop","action vs inaction"] },
+  { id:5,  part:2, num:"5",  title:"The Curator",                      status:"placeholder", spine:"",                                                                                                                   concepts:["active selection","identity construction","status signals"] },
+  { id:6,  part:2, num:"6",  title:"Why Wisdom Gets Filtered Out",     status:"written",     spine:"The ego checks credentials before it checks content.",                                                              concepts:["source credibility","shadow work","self-image","diamond metaphor"] },
+  { id:7,  part:2, num:"7",  title:"The Realms",                       status:"placeholder", spine:"",                                                                                                                   concepts:["Buddhist realms","self-reinforcing worlds","palace & prison"] },
+  { id:8,  part:3, num:"8",  title:"Making the World Conform",         status:"placeholder", spine:"",                                                                                                                   concepts:["first path","treadmill","circumstance manipulation"] },
+  { id:9,  part:3, num:"9",  title:"Dissolving the Beliefs",           status:"placeholder", spine:"",                                                                                                                   concepts:["second path","nihilism fear","feels like dying","lightness"] },
+  { id:10, part:3, num:"10", title:"De-objectifying the Self",         status:"placeholder", spine:"",                                                                                                                   concepts:["anatta","perceiver","stream entry"] },
+  { id:11, part:4, num:"11", title:"The Trap on Both Paths",           status:"placeholder", spine:"",                                                                                                                   concepts:["spiritual materialism","symmetry","pride-lined","resentment-lined"] },
+  { id:12, part:4, num:"12", title:"The Spirit Path vs. The Status Path", status:"placeholder", spine:"",                                                                                                               concepts:["the fork","servant leader","diagnostic signs"] },
+  { id:13, part:4, num:"13", title:"What Opening the Heart Actually Means", status:"placeholder", spine:"",                                                                                                             concepts:["not sentiment","arrival","discernment restored"] },
+];
+
+const PARTS = [
+  { label:"Preface",                   color:"#9A9080" },
+  { label:"Part I — The Machine",      color:"#5A8A5A" },
+  { label:"Part II — The Curator",     color:"#7A6A52" },
+  { label:"Part III — The Paths",      color:"#4A7A9B" },
+  { label:"Part IV — The Heart",       color:"#B85450" },
+];
+
+const STATUS_COLORS = { written:"#5A8A5A", "in-progress":"#C8A820", placeholder:"#B0A898" };
+const STATUS_BG     = { written:"rgba(90,138,90,0.08)", "in-progress":"rgba(200,168,32,0.08)", placeholder:"rgba(176,168,152,0.06)" };
+
+let state = JSON.parse(localStorage.getItem('book-planner') || 'null') || CHAPTERS.map(c => ({...c}));
+let openCard = null;
+let editingId = null;
+let currentView = 'cards';
+
+function save() { localStorage.setItem('book-planner', JSON.stringify(state)); }
+function getChapter(id) { return state.find(c => c.id === id); }
+function updateChapter(id, patch) { Object.assign(getChapter(id), patch); save(); }
+
+// ── CARD VIEW ────────────────────────────────────────────────────────
+
+function renderCards() {
+  const body = document.getElementById('body');
+  const groups = [0,1,2,3,4].map(p => state.filter(c => c.part === p));
+  body.innerHTML = groups.map((chs, p) => `
+    <div class="part-group">
+      <div class="part-label" style="color:${PARTS[p].color};border-color:${PARTS[p].color}22">${PARTS[p].label}</div>
+      <div class="cards-grid">${chs.map(ch => renderCard(ch, p)).join('')}</div>
+    </div>`).join('');
+  attachCardListeners();
+}
+
+function renderCard(ch, p) {
+  const isOpen = openCard === ch.id;
+  const isEditing = editingId === ch.id;
+  return `
+  <div class="card ${isOpen ? 'open' : ''}" style="background:${isOpen ? '#FFF9F0' : STATUS_BG[ch.status]}" data-id="${ch.id}">
+    <div class="card-header">
+      <div>
+        <div class="card-num" style="color:${PARTS[p].color}">Ch. ${ch.num}</div>
+        <div class="card-title ${ch.status === 'placeholder' ? 'dim' : ''}">${ch.title}</div>
+      </div>
+      <div class="status-dot" style="background:${STATUS_COLORS[ch.status]}"></div>
+    </div>
+    <div class="card-body">
+      <div class="field-label">Spine sentence</div>
+      <div class="spine-display ${ch.spine ? '' : 'empty'}" data-spine-display="${ch.id}">
+        ${ch.spine || 'Click to write the spine sentence…'}
+      </div>
+      <div class="spine-edit ${isEditing ? 'active' : ''}" data-spine-edit="${ch.id}">
+        <textarea rows="3" data-spine-ta="${ch.id}">${ch.spine || ''}</textarea>
+        <div class="edit-actions">
+          <button class="btn primary" data-save="${ch.id}">Save</button>
+          <button class="btn" data-cancel="${ch.id}">Cancel</button>
+        </div>
+      </div>
+      ${ch.concepts.length ? `
+      <div class="concepts">
+        <div class="field-label">Concepts</div>
+        <div class="concept-tags">${ch.concepts.map(c => `<span class="tag">${c}</span>`).join('')}</div>
+      </div>` : ''}
+      <div class="status-row">
+        ${['written','in-progress','placeholder'].map(s => `
+          <button class="status-btn" data-setstatus="${ch.id}" data-status="${s}"
+            style="border-color:${ch.status===s?STATUS_COLORS[s]:'var(--rule)'};background:${ch.status===s?STATUS_COLORS[s]:'transparent'};color:${ch.status===s?'#fff':'var(--faint)'}"
+          >${s==='in-progress'?'In progress':s.charAt(0).toUpperCase()+s.slice(1)}</button>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+function attachCardListeners() {
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', e => {
+      const id = +card.dataset.id;
+      // spine display click → edit
+      if (e.target.closest('[data-spine-display]')) {
+        e.stopPropagation();
+        editingId = id;
+        renderCards();
+        setTimeout(() => document.querySelector(`[data-spine-ta="${id}"]`)?.focus(), 10);
+        return;
+      }
+      // save button
+      const saveBtn = e.target.closest('[data-save]');
+      if (saveBtn) {
+        e.stopPropagation();
+        const val = document.querySelector(`[data-spine-ta="${id}"]`)?.value.trim() || '';
+        updateChapter(id, { spine: val });
+        editingId = null;
+        renderCards();
+        return;
+      }
+      // cancel button
+      if (e.target.closest('[data-cancel]')) {
+        e.stopPropagation();
+        editingId = null;
+        renderCards();
+        return;
+      }
+      // status button
+      const statusBtn = e.target.closest('[data-setstatus]');
+      if (statusBtn) {
+        e.stopPropagation();
+        updateChapter(id, { status: statusBtn.dataset.status });
+        renderCards();
+        return;
+      }
+      // toggle open
+      if (!e.target.closest('.card-body')) {
+        openCard = openCard === id ? null : id;
+        editingId = null;
+        renderCards();
+      }
+    });
+  });
+}
+
+// ── SPINE VIEW ───────────────────────────────────────────────────────
+
+function renderSpine() {
+  const container = document.getElementById('spine-rows');
+  container.innerHTML = state.map((ch, i) => {
+    const isEditing = editingId === ch.id;
+    return `
+    <div class="spine-row">
+      <div class="spine-connector">
+        <div class="spine-dot" style="background:${STATUS_COLORS[ch.status]}"></div>
+        ${i < state.length-1 ? '<div class="spine-line"></div>' : ''}
+      </div>
+      <div class="spine-content">
+        <div class="spine-ch-header">
+          <span class="spine-ch-num" style="color:${PARTS[ch.part].color}">Ch. ${ch.num}</span>
+          <span class="spine-ch-title">${ch.title}</span>
+        </div>
+        <div class="spine-sentence ${ch.spine?'':'empty'}" data-spine-s="${ch.id}" style="display:${isEditing?'none':'block'}">
+          ${ch.spine || '— not yet written'}
+        </div>
+        <div class="spine-edit-wrap ${isEditing?'active':''}" data-spine-ew="${ch.id}">
+          <textarea rows="2" data-spine-sta="${ch.id}">${ch.spine||''}</textarea>
+          <div class="edit-actions">
+            <button class="btn primary" data-ssave="${ch.id}">Save</button>
+            <button class="btn" data-scancel="${ch.id}">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  container.querySelectorAll('[data-spine-s]').forEach(el => {
+    el.addEventListener('click', () => {
+      editingId = +el.dataset.spineS;
+      renderSpine();
+      setTimeout(() => document.querySelector(`[data-spine-sta="${editingId}"]`)?.focus(), 10);
+    });
+  });
+  container.querySelectorAll('[data-ssave]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = +btn.dataset.ssave;
+      const val = document.querySelector(`[data-spine-sta="${id}"]`)?.value.trim() || '';
+      updateChapter(id, { spine: val });
+      editingId = null;
+      renderSpine();
+    });
+  });
+  container.querySelectorAll('[data-scancel]').forEach(btn => {
+    btn.addEventListener('click', () => { editingId = null; renderSpine(); });
+  });
+}
+
+// ── TEXTAREA KEYBOARD SHORTCUTS ──────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && editingId !== null) { editingId = null; currentView === 'cards' ? renderCards() : renderSpine(); }
+  if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && editingId !== null) {
+    const id = editingId;
+    const ta = document.querySelector(`[data-spine-ta="${id}"]`) || document.querySelector(`[data-spine-sta="${id}"]`);
+    if (ta) { updateChapter(id, { spine: ta.value.trim() }); editingId = null; currentView === 'cards' ? renderCards() : renderSpine(); }
+  }
+});
+
+// ── VIEW SWITCH ──────────────────────────────────────────────────────
+function switchView(v) {
+  currentView = v;
+  editingId = null;
+  document.querySelectorAll('.view-tab').forEach(t => t.classList.toggle('active', t.textContent.toLowerCase() === v));
+  document.getElementById('body').style.display = v === 'cards' ? 'block' : 'none';
+  document.getElementById('spine-view').style.display = v === 'spine' ? 'block' : 'none';
+  document.getElementById('legend-hint').textContent = v === 'cards' ? 'Click to expand · click spine to edit' : 'Click any sentence to edit';
+  v === 'cards' ? renderCards() : renderSpine();
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────
+renderCards();
+</script>
+</body>
+</html>
