@@ -206,6 +206,37 @@ a.branch:hover {
   margin-bottom: 0.4rem;
 }
 
+/* ── Completion meter ── */
+.completion-meter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.completion-bar {
+  flex: 1;
+  height: 3px;
+  background: var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.completion-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.completion-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--faint-text);
+  white-space: nowrap;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
 /* ── Drop cap ── */
 .drop-cap::first-letter {
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -225,6 +256,16 @@ blockquote {
   color: var(--light-text);
   font-style: italic;
   font-size: 1.05rem;
+}
+
+/* ── Asides ── */
+.aside {
+  font-size: 0.88rem;
+  color: var(--light-text);
+  font-style: italic;
+  border-left: 2px solid var(--rule);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
 }
 
 /* ── Diagrams ── */
@@ -250,6 +291,19 @@ blockquote {
   color: var(--faint-text);
   font-style: italic;
 }
+
+/* ── Examples list ── */
+ul.examples {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+
+ul.examples li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+ul.examples li:first-child { border-top: 1px solid var(--rule); }
 
 /* ── Index / homepage ── */
 .essay-list { list-style: none; margin-top: 1rem; }
