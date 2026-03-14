@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" width="720" height="450" font-family="Georgia, 'EB Garamond', serif">
+
+  <rect width="720" height="450" fill="#FAFAF8"/>
+
+  <!-- Background zones -->
+  <rect x="20" y="20" width="660" height="200" rx="3" fill="#5A8A5A" fill-opacity="0.06"/>
+  <rect x="20" y="220" width="660" height="200" rx="3" fill="#B85450" fill-opacity="0.06"/>
+
+  <!-- Midline -->
+  <line x1="20" y1="220" x2="680" y2="220" stroke="#C8C0B0" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- PATH U3 -->
+  <polyline points="50,220 120,188 200,158 285,122 375,90 465,66 560,48 650,36" fill="none" stroke="#C8C0B0" stroke-width="1.2"/>
+  <circle cx="120" cy="188" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="120" y="188" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="200" cy="158" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="200" y="158" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="285" cy="122" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="285" y="122" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="375" cy="90"  r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="375" y="90"  text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="465" cy="66"  r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="465" y="66"  text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="560" cy="48"  r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="560" y="48"  text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="650" cy="36"  r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="650" y="36"  text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <text x="668" y="36" dominant-baseline="central" font-size="9" fill="#5A8A5A" font-style="italic">grandiosity</text>
+
+  <!-- PATH U2 -->
+  <polyline points="50,220 120,202 200,184 285,162 375,140 465,118 560,102 650,90" fill="none" stroke="#C8C0B0" stroke-width="1.2"/>
+  <circle cx="120" cy="202" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="120" y="202" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="200" cy="184" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="200" y="184" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="285" cy="162" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="285" y="162" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="375" cy="140" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="375" y="140" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="465" cy="118" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="465" y="118" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="560" cy="102" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="560" y="102" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="650" cy="90"  r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="650" y="90"  text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+
+  <!-- PATH U1 -->
+  <polyline points="50,220 120,212 200,204 285,194 375,182 465,170 560,160 650,150" fill="none" stroke="#C8C0B0" stroke-width="1.2"/>
+  <circle cx="120" cy="212" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="120" y="212" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="200" cy="204" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="200" y="204" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="285" cy="194" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="285" y="194" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="375" cy="182" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="375" y="182" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="465" cy="170" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="465" y="170" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="560" cy="160" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="560" y="160" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="650" cy="150" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="650" y="150" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+
+  <!-- PATH M -->
+  <line x1="50" y1="220" x2="650" y2="220" stroke="#C8C0B0" stroke-width="1.2"/>
+  <circle cx="120" cy="220" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="120" y="220" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="200" cy="220" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="200" y="220" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="285" cy="220" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="285" y="220" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="375" cy="220" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="375" y="220" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="465" cy="220" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="465" y="220" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="560" cy="220" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="560" y="220" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="650" cy="220" r="13" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.3"/><text x="650" y="220" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#6B6357">+</text>
+
+  <!-- PATH D1 -->
+  <polyline points="50,220 120,228 200,236 285,246 375,258 465,270 560,280 650,290" fill="none" stroke="#C8C0B0" stroke-width="1.2"/>
+  <circle cx="120" cy="228" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="120" y="228" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="200" cy="236" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="200" y="236" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="285" cy="246" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="285" y="246" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="375" cy="258" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="375" y="258" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="465" cy="270" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="465" y="270" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="560" cy="280" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="560" y="280" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="650" cy="290" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="650" y="290" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+
+  <!-- PATH D2 -->
+  <polyline points="50,220 120,238 200,256 285,278 375,300 465,318 560,332 650,344" fill="none" stroke="#C8C0B0" stroke-width="1.2"/>
+  <circle cx="120" cy="238" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="120" y="238" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="200" cy="256" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="200" y="256" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="285" cy="278" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="285" y="278" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="375" cy="300" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="375" y="300" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="465" cy="318" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="465" y="318" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="560" cy="332" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="560" y="332" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="650" cy="344" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="650" y="344" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+
+  <!-- PATH D3 -->
+  <polyline points="50,220 120,252 200,284 285,314 375,338 465,356 560,370 650,382" fill="none" stroke="#C8C0B0" stroke-width="1.2"/>
+  <circle cx="120" cy="252" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="120" y="252" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="200" cy="284" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="200" y="284" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="285" cy="314" r="13" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.3"/><text x="285" y="314" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#5A8A5A">+</text>
+  <circle cx="375" cy="338" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="375" y="338" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="465" cy="356" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="465" y="356" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="560" cy="370" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="560" y="370" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <circle cx="650" cy="382" r="13" fill="#F5F2ED" stroke="#B85450" stroke-width="1.3"/><text x="650" y="382" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#B85450">−</text>
+  <text x="668" y="382" dominant-baseline="central" font-size="9" fill="#B85450" font-style="italic">nihilism</text>
+
+  <!-- Origin -->
+  <circle cx="50" cy="220" r="18" fill="#F0EDE6" stroke="#6B6357" stroke-width="1.5"/>
+
+  <!-- Caption -->
+  <text x="350" y="432" text-anchor="middle" font-size="10" fill="#9A9080" font-style="italic">Each path starts from the same point. The accumulation of + and − determines the trajectory.</text>
+
+</svg>
