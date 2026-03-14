@@ -90,7 +90,12 @@ body {
 
 .nav-section a:hover { color: var(--text); text-decoration: none; }
 .nav-section a.current { color: var(--accent); font-style: italic; }
-.nav-section a.coming-soon { color: var(--faint-text); cursor: default; pointer-events: none; }
+
+/* coming-soon: still styled faintly but now clickable */
+.nav-section a.coming-soon {
+  color: var(--faint-text);
+}
+.nav-section a.coming-soon:hover { color: var(--light-text); }
 
 /* ── Main content area ── */
 .content-wrap {
