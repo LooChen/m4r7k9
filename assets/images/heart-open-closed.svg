@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 540" width="780" height="540" font-family="Georgia, 'EB Garamond', serif">
+
+  <rect width="780" height="540" fill="#FAFAF8"/>
+
+  <!-- ROW 1: + outcome -->
+
+  <!-- + circle -->
+  <circle cx="52" cy="100" r="28" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.4"/>
+  <text x="52" y="100" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#5A8A5A">+</text>
+
+  <!-- arrow to feelings -->
+  <line x1="82" y1="100" x2="118" y2="100" stroke="#C8C0B0" stroke-width="1.2"/>
+  <polygon points="118,96 126,100 118,104" fill="#C8C0B0"/>
+
+  <!-- Pride / Inflation / Arrogance box -->
+  <rect x="128" y="72" width="148" height="56" rx="4" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="202" y="92" font-size="10.5" fill="#6B6357" letter-spacing="0.04em">PRIDE</tspan>
+    <tspan x="202" dy="1.4em" font-size="10.5" fill="#6B6357" letter-spacing="0.04em">INFLATION</tspan>
+    <tspan x="202" dy="1.4em" font-size="10.5" fill="#6B6357" letter-spacing="0.04em">ARROGANCE</tspan>
+  </text>
+
+  <!-- arrow to heart closes -->
+  <line x1="276" y1="100" x2="312" y2="100" stroke="#C8C0B0" stroke-width="1.2"/>
+  <polygon points="312,96 320,100 312,104" fill="#C8C0B0"/>
+
+  <!-- Heart Closes box (positive) -->
+  <rect x="322" y="78" width="108" height="44" rx="4" fill="#F0EDE6" stroke="#9A9080" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="376" y="98" dy="-0.55em" font-size="10.5" fill="#9A9080" letter-spacing="0.04em">HEART</tspan>
+    <tspan x="376" dy="1.5em" font-size="10.5" fill="#9A9080" letter-spacing="0.04em">CLOSES</tspan>
+  </text>
+
+  <!-- arrow to consequences -->
+  <line x1="430" y1="100" x2="464" y2="100" stroke="#C8C0B0" stroke-width="1.2"/>
+  <polygon points="464,96 472,100 464,104" fill="#C8C0B0"/>
+
+  <!-- Consequences col 1 (positive path) -->
+  <text x="478" font-size="9.5" fill="#9A9080" font-style="italic">
+    <tspan x="478" y="78">Exaggerated positive self talk</tspan>
+    <tspan x="478" dy="1.55em">No empathy</tspan>
+    <tspan x="478" dy="1.55em">Overstepping</tspan>
+    <tspan x="478" dy="1.55em">Taking</tspan>
+    <tspan x="478" dy="1.55em">Not noticing</tspan>
+  </text>
+
+  <!-- Divider -->
+  <line x1="40" y1="168" x2="740" y2="168" stroke="#DDD8CE" stroke-width="0.8"/>
+
+  <!-- ROW 2: - outcome -->
+
+  <!-- - circle -->
+  <circle cx="52" cy="290" r="28" fill="#F5F2ED" stroke="#B85450" stroke-width="1.4"/>
+  <text x="52" y="290" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#B85450">−</text>
+
+  <!-- arrow to feelings -->
+  <line x1="82" y1="290" x2="118" y2="290" stroke="#C8C0B0" stroke-width="1.2"/>
+  <polygon points="118,286 126,290 118,294" fill="#C8C0B0"/>
+
+  <!-- Shame / Embarrassment / Contraction box -->
+  <rect x="128" y="262" width="148" height="56" rx="4" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="202" y="282" font-size="10.5" fill="#6B6357" letter-spacing="0.04em">SHAME</tspan>
+    <tspan x="202" dy="1.4em" font-size="10.5" fill="#6B6357" letter-spacing="0.04em">EMBARRASSMENT</tspan>
+    <tspan x="202" dy="1.4em" font-size="10.5" fill="#6B6357" letter-spacing="0.04em">CONTRACTION</tspan>
+  </text>
+
+  <!-- arrow to heart closes -->
+  <line x1="276" y1="290" x2="312" y2="290" stroke="#C8C0B0" stroke-width="1.2"/>
+  <polygon points="312,286 320,290 312,294" fill="#C8C0B0"/>
+
+  <!-- Heart Closes box (negative) -->
+  <rect x="322" y="268" width="108" height="44" rx="4" fill="#F0EDE6" stroke="#9A9080" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="376" y="288" dy="-0.55em" font-size="10.5" fill="#9A9080" letter-spacing="0.04em">HEART</tspan>
+    <tspan x="376" dy="1.5em" font-size="10.5" fill="#9A9080" letter-spacing="0.04em">CLOSES</tspan>
+  </text>
+
+  <!-- arrow to consequences -->
+  <line x1="430" y1="290" x2="464" y2="290" stroke="#C8C0B0" stroke-width="1.2"/>
+  <polygon points="464,286 472,290 464,294" fill="#C8C0B0"/>
+
+  <!-- Consequences col 2 (negative path) -->
+  <text x="478" font-size="9.5" fill="#9A9080" font-style="italic">
+    <tspan x="478" y="258">Exaggerated negative self view</tspan>
+    <tspan x="478" dy="1.55em">Anger</tspan>
+    <tspan x="478" dy="1.55em">Resentment</tspan>
+    <tspan x="478" dy="1.55em">Anxiety</tspan>
+    <tspan x="478" dy="1.55em">Isolation</tspan>
+  </text>
+
+  <!-- Divider -->
+  <line x1="40" y1="370" x2="740" y2="370" stroke="#DDD8CE" stroke-width="0.8"/>
+
+  <!-- ROW 3: Open Heart -->
+
+  <!-- Open Heart box -->
+  <rect x="280" y="408" width="108" height="44" rx="4" fill="#EDF2ED" stroke="#7A9A7A" stroke-width="1.4"/>
+  <text text-anchor="middle">
+    <tspan x="334" y="428" dy="-0.55em" font-size="10.5" fill="#5A8A5A" letter-spacing="0.04em">OPEN</tspan>
+    <tspan x="334" dy="1.5em" font-size="10.5" fill="#5A8A5A" letter-spacing="0.04em">HEART</tspan>
+  </text>
+
+  <!-- arrow to qualities -->
+  <line x1="388" y1="430" x2="422" y2="430" stroke="#7A9A7A" stroke-width="1.2"/>
+  <polygon points="422,426 430,430 422,434" fill="#7A9A7A"/>
+
+  <!-- Open heart qualities -->
+  <text x="438" font-size="9.5" fill="#5A8A5A" font-style="italic">
+    <tspan x="438" y="408">Forgiveness</tspan>
+    <tspan x="438" dy="1.55em">Discernment</tspan>
+    <tspan x="438" dy="1.55em">Clarity</tspan>
+    <tspan x="438" dy="1.55em">Joy</tspan>
+  </text>
+
+  <!-- Caption -->
+  <text x="390" y="524" text-anchor="middle" font-size="10.5" fill="#9A9080" font-style="italic">Both reactions close the heart. The open heart is available when neither pole is running.</text>
+
+</svg>
