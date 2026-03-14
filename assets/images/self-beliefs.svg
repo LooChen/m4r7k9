@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 580" width="780" height="580" font-family="Georgia, 'EB Garamond', serif">
+
+  <rect width="780" height="580" fill="#FAFAF8"/>
+
+  <!-- SELF circle cx=110 cy=290 r=70 -->
+  <circle cx="110" cy="290" r="70" fill="#F0EDE6" stroke="#6B6357" stroke-width="1.5"/>
+  <text x="110" text-anchor="middle">
+    <tspan x="110" y="290" dy="-0.6em" font-size="13" fill="#3D3830" letter-spacing="0.08em">SELF</tspan>
+    <tspan x="110" dy="1.5em" font-size="10" fill="#9A9080" font-style="italic">identity</tspan>
+  </text>
+
+  <!-- Spokes -->
+  <line x1="167" y1="228" x2="264" y2="118" stroke="#C8C0B0" stroke-width="1.2"/>
+  <line x1="180" y1="290" x2="264" y2="290" stroke="#C8C0B0" stroke-width="1.2"/>
+  <line x1="167" y1="352" x2="264" y2="462" stroke="#C8C0B0" stroke-width="1.2"/>
+
+  <!-- BELIEF 1 -->
+  <rect x="264" y="94" width="162" height="48" rx="4" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="345" y="118" dy="-0.55em" font-size="10.5" fill="#6B6357" letter-spacing="0.05em">BELIEF 1</tspan>
+    <tspan x="345" dy="1.5em" font-size="9.5" fill="#9A9080" font-style="italic">"being smart is good"</tspan>
+  </text>
+  <line x1="426" y1="106" x2="506" y2="62" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3"/>
+  <line x1="426" y1="130" x2="506" y2="174" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3"/>
+  <circle cx="522" cy="52" r="18" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.4"/>
+  <text x="522" y="52" text-anchor="middle" dominant-baseline="central" font-size="18" fill="#5A8A5A">+</text>
+  <circle cx="522" cy="184" r="18" fill="#F5F2ED" stroke="#B85450" stroke-width="1.4"/>
+  <text x="522" y="184" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#B85450">−</text>
+  <text x="548" y="52" dominant-baseline="central" font-size="9.5" fill="#5A8A5A">positive</text>
+  <text x="548" y="184" dominant-baseline="central" font-size="9.5" fill="#B85450">negative</text>
+
+  <!-- BELIEF 2 -->
+  <rect x="264" y="266" width="162" height="48" rx="4" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="345" y="290" dy="-0.55em" font-size="10.5" fill="#6B6357" letter-spacing="0.05em">BELIEF 2</tspan>
+    <tspan x="345" dy="1.5em" font-size="9.5" fill="#9A9080" font-style="italic">"cold weather is bad"</tspan>
+  </text>
+  <line x1="426" y1="278" x2="506" y2="238" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3"/>
+  <line x1="426" y1="302" x2="506" y2="342" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3"/>
+  <circle cx="522" cy="228" r="18" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.4"/>
+  <text x="522" y="228" text-anchor="middle" dominant-baseline="central" font-size="18" fill="#5A8A5A">+</text>
+  <circle cx="522" cy="352" r="18" fill="#F5F2ED" stroke="#B85450" stroke-width="1.4"/>
+  <text x="522" y="352" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#B85450">−</text>
+  <text x="548" y="228" dominant-baseline="central" font-size="9.5" fill="#5A8A5A">positive</text>
+  <text x="548" y="352" dominant-baseline="central" font-size="9.5" fill="#B85450">negative</text>
+
+  <!-- BELIEF 3 -->
+  <rect x="264" y="438" width="162" height="48" rx="4" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="345" y="462" dy="-0.55em" font-size="10.5" fill="#6B6357" letter-spacing="0.05em">BELIEF 3</tspan>
+    <tspan x="345" dy="1.5em" font-size="9.5" fill="#9A9080" font-style="italic">"being young is good"</tspan>
+  </text>
+  <line x1="426" y1="450" x2="506" y2="408" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3"/>
+  <line x1="426" y1="474" x2="506" y2="516" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3"/>
+  <circle cx="522" cy="398" r="18" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.4"/>
+  <text x="522" y="398" text-anchor="middle" dominant-baseline="central" font-size="18" fill="#5A8A5A">+</text>
+  <circle cx="522" cy="526" r="18" fill="#F5F2ED" stroke="#B85450" stroke-width="1.4"/>
+  <text x="522" y="526" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#B85450">−</text>
+  <text x="548" y="398" dominant-baseline="central" font-size="9.5" fill="#5A8A5A">positive</text>
+  <text x="548" y="526" dominant-baseline="central" font-size="9.5" fill="#B85450">negative</text>
+
+  <!-- Caption -->
+  <text x="390" y="562" text-anchor="middle" font-size="10.5" fill="#9A9080" font-style="italic">Each belief held in the self produces both positive and negative possible responses.</text>
+
+</svg>
