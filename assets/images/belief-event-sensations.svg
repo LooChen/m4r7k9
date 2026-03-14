@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 450" width="780" height="450" font-family="Georgia, 'EB Garamond', serif">
+
+  <rect width="780" height="450" fill="#FAFAF8"/>
+
+  <!-- SELF circle cx=70 cy=225 r=52 -->
+  <circle cx="70" cy="225" r="52" fill="#F0EDE6" stroke="#6B6357" stroke-width="1.5"/>
+  <text x="70" text-anchor="middle">
+    <tspan x="70" y="225" dy="-0.6em" font-size="13" fill="#3D3830" letter-spacing="0.08em">SELF</tspan>
+    <tspan x="70" dy="1.5em" font-size="10" fill="#9A9080" font-style="italic">identity</tspan>
+  </text>
+
+  <!-- Spoke: SELF to BELIEF -->
+  <line x1="122" y1="225" x2="145" y2="225" stroke="#C8C0B0" stroke-width="1.2"/>
+
+  <!-- BELIEF box centre y=225 -->
+  <rect x="145" y="201" width="155" height="48" rx="4" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="222" y="225" dy="-0.55em" font-size="10.5" fill="#6B6357" letter-spacing="0.05em">BELIEF</tspan>
+    <tspan x="222" dy="1.5em" font-size="9.5" fill="#9A9080" font-style="italic">"being attractive is good"</tspan>
+  </text>
+
+  <!-- Spokes: BELIEF to events -->
+  <line x1="300" y1="213" x2="332" y2="130" stroke="#C8C0B0" stroke-width="1.2"/>
+  <line x1="300" y1="237" x2="332" y2="320" stroke="#C8C0B0" stroke-width="1.2"/>
+
+  <!-- + circle -->
+  <circle cx="322" cy="112" r="14" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.4"/>
+  <text x="322" y="112" text-anchor="middle" dominant-baseline="central" font-size="18" fill="#5A8A5A">+</text>
+
+  <!-- COMPLIMENT box centre y=112 -->
+  <rect x="344" y="86" width="158" height="52" rx="4" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="423" y="112" dy="-0.55em" font-size="10.5" fill="#5A8A5A" letter-spacing="0.05em">COMPLIMENT</tspan>
+    <tspan x="423" dy="1.5em" font-size="9.5" fill="#5A8A5A" font-style="italic">"you are attractive"</tspan>
+  </text>
+
+  <!-- − circle -->
+  <circle cx="322" cy="320" r="14" fill="#F5F2ED" stroke="#B85450" stroke-width="1.4"/>
+  <text x="322" y="320" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#B85450">−</text>
+
+  <!-- INSULT box centre y=320 -->
+  <rect x="344" y="294" width="158" height="52" rx="4" fill="#F5F2ED" stroke="#B85450" stroke-width="1.2"/>
+  <text text-anchor="middle">
+    <tspan x="423" y="320" dy="-0.55em" font-size="10.5" fill="#B85450" letter-spacing="0.05em">INSULT</tspan>
+    <tspan x="423" dy="1.5em" font-size="9.5" fill="#B85450" font-style="italic">"you are repulsive"</tspan>
+  </text>
+
+  <!-- Dotted lines: events to panels -->
+  <line x1="502" y1="112" x2="524" y2="112" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3"/>
+  <line x1="502" y1="320" x2="524" y2="320" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3"/>
+
+  <!-- PRIDE panel -->
+  <text x="524" y="58" font-size="11" fill="#5A8A5A" letter-spacing="0.08em" text-decoration="underline">PRIDE</text>
+  <text x="524" y="76" font-size="8" fill="#C8C0B0" letter-spacing="0.1em">BODY</text>
+  <text x="636" y="76" font-size="8" fill="#C8C0B0" letter-spacing="0.1em">FEELING</text>
+  <line x1="524" y1="80" x2="760" y2="80" stroke="#DDD8CE" stroke-width="0.5"/>
+  <line x1="630" y1="74" x2="630" y2="152" stroke="#DDD8CE" stroke-width="0.5"/>
+  <text x="524" y="97" font-size="9.5" fill="#9A9080" font-style="italic">warmth in chest</text>
+  <text x="636" y="97" font-size="9.5" fill="#9A9080" font-style="italic">expansion</text>
+  <text x="636" y="113" font-size="9.5" fill="#9A9080" font-style="italic">energy</text>
+  <text x="636" y="129" font-size="9.5" fill="#9A9080" font-style="italic">boldness</text>
+
+  <!-- EMBARRASSMENT panel -->
+  <text x="524" y="268" font-size="11" fill="#B85450" letter-spacing="0.08em" text-decoration="underline">EMBARRASSMENT</text>
+  <text x="524" y="286" font-size="8" fill="#C8C0B0" letter-spacing="0.1em">BODY</text>
+  <text x="636" y="286" font-size="8" fill="#C8C0B0" letter-spacing="0.1em">FEELING</text>
+  <line x1="524" y1="290" x2="760" y2="290" stroke="#DDD8CE" stroke-width="0.5"/>
+  <line x1="630" y1="284" x2="630" y2="370" stroke="#DDD8CE" stroke-width="0.5"/>
+  <text x="524" y="307" font-size="9.5" fill="#9A9080" font-style="italic">knot in stomach</text>
+  <text x="636" y="307" font-size="9.5" fill="#9A9080" font-style="italic">contraction</text>
+  <text x="636" y="323" font-size="9.5" fill="#9A9080" font-style="italic">lethargy</text>
+  <text x="636" y="339" font-size="9.5" fill="#9A9080" font-style="italic">timidity</text>
+  <text x="636" y="355" font-size="9.5" fill="#9A9080" font-style="italic">closed off</text>
+
+  <!-- Caption -->
+  <text x="390" y="432" text-anchor="middle" font-size="10.5" fill="#9A9080" font-style="italic">The same belief routes a compliment toward pride and an insult toward embarrassment.</text>
+
+</svg>
