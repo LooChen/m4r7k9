@@ -91,10 +91,7 @@ body {
 .nav-section a:hover { color: var(--text); text-decoration: none; }
 .nav-section a.current { color: var(--accent); font-style: italic; }
 
-/* coming-soon: still styled faintly but now clickable */
-.nav-section a.coming-soon {
-  color: var(--faint-text);
-}
+.nav-section a.coming-soon { color: var(--faint-text); }
 .nav-section a.coming-soon:hover { color: var(--light-text); }
 
 /* ── Main content area ── */
@@ -271,6 +268,48 @@ blockquote {
   border-left: 2px solid var(--rule);
   padding-left: 1rem;
   margin: 1.5rem 0;
+}
+
+/* ── Claude draft block ── */
+.claude-draft {
+  border: 1px solid var(--rule);
+  border-left: 3px solid #C8B89A;
+  border-radius: 3px;
+  background: #F7F4EF;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  color: var(--light-text);
+}
+
+.claude-draft-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #C8B89A;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.claude-draft p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1.1rem;
+}
+
+.claude-draft p:last-child { margin-bottom: 0; }
+
+.claude-draft h2 {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--light-text);
+}
+
+.claude-draft .aside {
+  border-left-color: #C8B89A;
+}
+
+.claude-draft figure.diagram {
+  background: #EDE9E2;
 }
 
 /* ── Diagrams ── */
