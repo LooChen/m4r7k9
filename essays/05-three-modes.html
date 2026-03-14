@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Three Modes of Reducing Suffering — The Filter & The Heart</title>
+  <link rel="stylesheet" href="/m4r7k9/assets/style.css">
+  <style>
+    .coming-soon-badge { display: inline-block; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(176,168,152,0.12); color: var(--faint-text); border: 1px solid var(--rule); border-radius: 3px; padding: 0.15rem 0.5rem; margin-bottom: 1.5rem; }
+
+    /* ── Interactive diagram ── */
+    .diagram-wrap {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: #FAFAF8;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      margin: 2.5rem 0;
+    }
+    .mode-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px 12px 12px;
+      border-bottom: 1px solid #DDD8CE;
+    }
+    .mode-btn {
+      background: #F0EDE6;
+      border: 1px solid #C8C0B0;
+      border-radius: 20px;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: #6B6357;
+      cursor: pointer;
+      padding: 5px 14px;
+      transition: all 0.2s;
+      white-space: nowrap;
+      outline: none;
+    }
+    .mode-btn.active {
+      background: #3D3830;
+      border-color: #3D3830;
+      color: #F5F2ED;
+    }
+    .mode-btn:hover:not(.active) {
+      background: #E8E4DC;
+      border-color: #9A9080;
+      color: #3D3830;
+    }
+    .mode-label {
+      text-align: center;
+      padding: 10px 20px 0;
+      min-height: 52px;
+    }
+    .mode-label h3 {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 14px;
+      font-weight: normal;
+      color: #3D3830;
+      margin: 0 0 3px;
+      text-transform: none;
+      letter-spacing: 0.02em;
+    }
+    .mode-label p {
+      font-size: 11px;
+      color: #9A9080;
+      margin: 0;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <button class="mobile-nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰ Contents</button>
+  <div class="layout">
+    <nav class="sidebar">
+      <a href="/m4r7k9/" class="sidebar-title">The Filter<br>&amp; The Heart</a>
+      <div class="nav-section"><span class="nav-part-label">Preface</span><ul><li><a href="/m4r7k9/essays/preface.html">A Note Before We Begin</a></li></ul></div>
+      <div class="nav-section"><span class="nav-part-label">Part I — The Machine</span><ul>
+        <li><a href="/m4r7k9/essays/01-ego-as-process.html">The Ego as Process</a></li>
+        <li><a href="/m4r7k9/essays/02-the-filter-in-action.html">The Filter in Action</a></li>
+        <li><a href="/m4r7k9/essays/03-the-status-game.html">The Status Game</a></li>
+        <li><a href="/m4r7k9/essays/04-placeholder.html" class="coming-soon">The Addiction Engine</a></li>
+        <li><a href="/m4r7k9/essays/05-three-modes.html" class="current">Three Modes of Reducing Suffering</a></li>
+      </ul></div>
+      <div class="nav-section"><span class="nav-part-label">Part II — The Curator</span><ul>
+        <li><a href="/m4r7k9/essays/05-the-curator.html" class="coming-soon">The Curator</a></li>
+        <li><a href="/m4r7k9/essays/06-why-wisdom-gets-filtered-out.html">Why Wisdom Gets Filtered Out</a></li>
+        <li><a href="/m4r7k9/essays/07-the-realms.html" class="coming-soon">The Realms</a></li>
+      </ul></div>
+      <div class="nav-section"><span class="nav-part-label">Part III — The Paths</span><ul>
+        <li><a href="/m4r7k9/essays/08-making-the-world-conform.html" class="coming-soon">Making the World Conform</a></li>
+        <li><a href="/m4r7k9/essays/09-dissolving-the-beliefs.html" class="coming-soon">Dissolving the Beliefs</a></li>
+        <li><a href="/m4r7k9/essays/10-de-objectifying-the-self.html" class="coming-soon">De-objectifying the Self</a></li>
+      </ul></div>
+      <div class="nav-section"><span class="nav-part-label">Part IV — The Heart</span><ul>
+        <li><a href="/m4r7k9/essays/11-the-trap-on-both-paths.html" class="coming-soon">The Trap on Both Paths</a></li>
+        <li><a href="/m4r7k9/essays/12-spirit-path-vs-status-path.html" class="coming-soon">The Spirit Path vs. The Status Path</a></li>
+        <li><a href="/m4r7k9/essays/13-what-opening-the-heart-means.html" class="coming-soon">What Opening the Heart Actually Means</a></li>
+      </ul></div>
+    </nav>
+    <div class="content-wrap">
+      <main>
+        <div class="essay-meta">
+          <span class="part-label">Part I — The Machine · Chapter 5</span>
+          <h1>Three Modes of Reducing Suffering</h1>
+        </div>
+
+        <div class="coming-soon-badge">Draft</div>
+
+        <p>There are three common approaches to reducing suffering. They operate at different depths, and understanding the difference between them is most of the work.</p>
+
+        <!-- ── Interactive diagram ── -->
+        <div class="diagram-wrap">
+          <div class="mode-nav">
+            <button class="mode-btn active" onclick="setMode(0)">Base</button>
+            <button class="mode-btn" onclick="setMode(1)">Mode 1 — Eliminate negatives</button>
+            <button class="mode-btn" onclick="setMode(2)">Mode 2 — Loosen beliefs</button>
+            <button class="mode-btn" onclick="setMode(3)">Mode 3 — Loosen self</button>
+          </div>
+          <div class="mode-label">
+            <h3 id="mode-title">The structure of suffering</h3>
+            <p id="mode-desc">The self holds beliefs. Each belief generates both positive and negative responses.</p>
+          </div>
+          <svg viewBox="0 0 760 590" width="100%" font-family="'EB Garamond', Georgia, serif">
+
+            <!-- SELF circle -->
+            <circle id="self-bg" cx="110" cy="290" r="70" fill="#F0EDE6" stroke="#6B6357" stroke-width="1.5" style="transition:opacity 0.6s ease"/>
+            <text id="self-lbl" x="110" text-anchor="middle" style="transition:opacity 0.6s ease">
+              <tspan x="110" y="290" dy="-0.6em" font-size="13" fill="#3D3830" letter-spacing="0.08em">SELF</tspan>
+              <tspan x="110" dy="1.5em" font-size="10" fill="#9A9080" font-style="italic" id="self-sub">identity</tspan>
+            </text>
+
+            <!-- Joy ring (Mode 3) -->
+            <circle id="joy-ring" cx="110" cy="290" r="92" fill="none" stroke="#7A9A7A" stroke-width="1" stroke-dasharray="3 4" opacity="0" style="transition:opacity 0.8s ease"/>
+            <text id="joy-lbl1" x="110" y="192" text-anchor="middle" font-size="9.5" fill="#7A9A7A" font-style="italic" opacity="0" style="transition:opacity 0.8s ease">joy</text>
+            <text id="joy-lbl2" x="30" y="322" text-anchor="middle" font-size="9.5" fill="#7A9A7A" font-style="italic" opacity="0" style="transition:opacity 0.8s ease">contentment</text>
+            <circle id="jd1" cx="110" cy="198" r="3.5" fill="#7A9A7A" opacity="0" style="transition:opacity 0.8s ease"/>
+            <circle id="jd2" cx="32" cy="312" r="3.5" fill="#7A9A7A" opacity="0" style="transition:opacity 0.8s ease"/>
+            <circle id="jd3" cx="150" cy="380" r="3.5" fill="#7A9A7A" opacity="0" style="transition:opacity 0.8s ease"/>
+
+            <!-- Spokes -->
+            <line id="sp1" x1="167" y1="228" x2="264" y2="118" stroke="#C8C0B0" stroke-width="1.2" style="transition:opacity 0.5s"/>
+            <line id="sp2" x1="180" y1="290" x2="264" y2="290" stroke="#C8C0B0" stroke-width="1.2" style="transition:opacity 0.5s"/>
+            <line id="sp3" x1="167" y1="352" x2="264" y2="462" stroke="#C8C0B0" stroke-width="1.2" style="transition:opacity 0.5s"/>
+
+            <!-- BELIEF 1 -->
+            <g id="b1" style="transition:opacity 0.5s">
+              <rect x="264" y="94" width="162" height="48" rx="4" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.2"/>
+              <text text-anchor="middle">
+                <tspan x="345" y="118" dy="-0.55em" font-size="10.5" fill="#6B6357" letter-spacing="0.05em">BELIEF 1</tspan>
+                <tspan x="345" dy="1.5em" font-size="9.5" fill="#9A9080" font-style="italic">"being smart is good"</tspan>
+              </text>
+            </g>
+            <line id="dl1p" x1="426" y1="106" x2="506" y2="64" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3" style="transition:opacity 0.5s"/>
+            <line id="dl1n" x1="426" y1="130" x2="506" y2="172" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3" style="transition:opacity 0.5s"/>
+            <g id="o1p" style="transition:opacity 0.5s">
+              <circle cx="522" cy="54" r="18" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.4"/>
+              <text x="522" y="54" text-anchor="middle" dominant-baseline="central" font-size="18" fill="#5A8A5A">+</text>
+            </g>
+            <g id="o1n" style="transition:opacity 0.5s">
+              <circle cx="522" cy="182" r="18" fill="#F5F2ED" stroke="#B85450" stroke-width="1.4"/>
+              <text x="522" y="182" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#B85450">−</text>
+            </g>
+            <text id="l1p" x="548" y="54" dominant-baseline="central" font-size="9.5" fill="#5A8A5A" style="transition:opacity 0.5s">positive</text>
+            <text id="l1n" x="548" y="182" dominant-baseline="central" font-size="9.5" fill="#B85450" style="transition:opacity 0.5s">negative</text>
+
+            <!-- BELIEF 2 -->
+            <g id="b2" style="transition:opacity 0.5s">
+              <rect x="264" y="266" width="162" height="48" rx="4" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.2"/>
+              <text text-anchor="middle">
+                <tspan x="345" y="290" dy="-0.55em" font-size="10.5" fill="#6B6357" letter-spacing="0.05em">BELIEF 2</tspan>
+                <tspan x="345" dy="1.5em" font-size="9.5" fill="#9A9080" font-style="italic">"cold weather is bad"</tspan>
+              </text>
+            </g>
+            <line id="dl2p" x1="426" y1="278" x2="506" y2="238" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3" style="transition:opacity 0.5s"/>
+            <line id="dl2n" x1="426" y1="302" x2="506" y2="342" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3" style="transition:opacity 0.5s"/>
+            <g id="o2p" style="transition:opacity 0.5s">
+              <circle cx="522" cy="228" r="18" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.4"/>
+              <text x="522" y="228" text-anchor="middle" dominant-baseline="central" font-size="18" fill="#5A8A5A">+</text>
+            </g>
+            <g id="o2n" style="transition:opacity 0.5s">
+              <circle cx="522" cy="352" r="18" fill="#F5F2ED" stroke="#B85450" stroke-width="1.4"/>
+              <text x="522" y="352" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#B85450">−</text>
+            </g>
+            <text id="l2p" x="548" y="228" dominant-baseline="central" font-size="9.5" fill="#5A8A5A" style="transition:opacity 0.5s">positive</text>
+            <text id="l2n" x="548" y="352" dominant-baseline="central" font-size="9.5" fill="#B85450" style="transition:opacity 0.5s">negative</text>
+
+            <!-- BELIEF 3 -->
+            <g id="b3" style="transition:opacity 0.5s">
+              <rect x="264" y="438" width="162" height="48" rx="4" fill="#F5F2ED" stroke="#6B6357" stroke-width="1.2"/>
+              <text text-anchor="middle">
+                <tspan x="345" y="462" dy="-0.55em" font-size="10.5" fill="#6B6357" letter-spacing="0.05em">BELIEF 3</tspan>
+                <tspan x="345" dy="1.5em" font-size="9.5" fill="#9A9080" font-style="italic">"being young is good"</tspan>
+              </text>
+            </g>
+            <line id="dl3p" x1="426" y1="450" x2="506" y2="408" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3" style="transition:opacity 0.5s"/>
+            <line id="dl3n" x1="426" y1="474" x2="506" y2="516" stroke="#6B6357" stroke-width="0.9" stroke-dasharray="4 3" style="transition:opacity 0.5s"/>
+            <g id="o3p" style="transition:opacity 0.5s">
+              <circle cx="522" cy="398" r="18" fill="#F5F2ED" stroke="#5A8A5A" stroke-width="1.4"/>
+              <text x="522" y="398" text-anchor="middle" dominant-baseline="central" font-size="18" fill="#5A8A5A">+</text>
+            </g>
+            <g id="o3n" style="transition:opacity 0.5s">
+              <circle cx="522" cy="526" r="18" fill="#F5F2ED" stroke="#B85450" stroke-width="1.4"/>
+              <text x="522" y="526" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#B85450">−</text>
+            </g>
+            <text id="l3p" x="548" y="398" dominant-baseline="central" font-size="9.5" fill="#5A8A5A" style="transition:opacity 0.5s">positive</text>
+            <text id="l3n" x="548" y="526" dominant-baseline="central" font-size="9.5" fill="#B85450" style="transition:opacity 0.5s">negative</text>
+
+            <text id="caption" x="380" y="572" text-anchor="middle" font-size="10.5" fill="#9A9080" font-style="italic">Each belief held in the self produces both positive and negative possible responses.</text>
+          </svg>
+        </div>
+
+        <script>
+        const modes = [
+          {
+            title: "The structure of suffering",
+            desc: "The self holds beliefs. Each belief generates both positive and negative responses.",
+            caption: "Each belief held in the self produces both positive and negative possible responses.",
+            selfOp:1, selfStroke:"#6B6357", selfSW:1.5, lblFill:"#3D3830", subFill:"#9A9080", subTxt:"identity",
+            beliefOp:1, spokeOp:1, posOp:1, negOp:1, dotPOp:1, dotNOp:1, lblPOp:1, lblNOp:1, joyOp:0,
+          },
+          {
+            title: "Mode 1 — Attempt to eliminate the negative",
+            desc: "Try to remove all negative outcomes. The beliefs stay. The self stays intact.",
+            caption: "Eliminating negatives requires constant effort — and leaves the beliefs untouched.",
+            selfOp:1, selfStroke:"#6B6357", selfSW:1.5, lblFill:"#3D3830", subFill:"#9A9080", subTxt:"identity",
+            beliefOp:1, spokeOp:1, posOp:1, negOp:0.07, dotPOp:1, dotNOp:0.08, lblPOp:1, lblNOp:0.08, joyOp:0,
+          },
+          {
+            title: "Mode 2 — Loosen the beliefs",
+            desc: "Let go of the beliefs themselves. Both positive and negative responses soften and recede.",
+            caption: "Without strong beliefs, events lose their grip — positive and negative alike.",
+            selfOp:1, selfStroke:"#6B6357", selfSW:1.5, lblFill:"#3D3830", subFill:"#9A9080", subTxt:"identity",
+            beliefOp:0.35, spokeOp:0.15, posOp:0.2, negOp:0.07, dotPOp:0.2, dotNOp:0.07, lblPOp:0.15, lblNOp:0.05, joyOp:0,
+          },
+          {
+            title: "Mode 3 — Loosen the sense of self",
+            desc: "The self softens. Beliefs remain but lose their grip. Joy and contentment arise on their own.",
+            caption: "Without a fixed self, beliefs still exist but no longer bind. Something quieter opens up.",
+            selfOp:0.35, selfStroke:"#9A9080", selfSW:1, lblFill:"#9A9080", subFill:"#B0A898", subTxt:"loosening",
+            beliefOp:0.35, spokeOp:0.15, posOp:0.2, negOp:0.07, dotPOp:0.2, dotNOp:0.07, lblPOp:0.15, lblNOp:0.05, joyOp:1,
+          },
+        ];
+        function setMode(i) {
+          const m = modes[i];
+          document.querySelectorAll('.mode-btn').forEach((b, idx) => b.classList.toggle('active', idx === i));
+          document.getElementById('mode-title').textContent = m.title;
+          document.getElementById('mode-desc').textContent  = m.desc;
+          document.getElementById('caption').textContent    = m.caption;
+          const sb = document.getElementById('self-bg');
+          sb.style.opacity = m.selfOp;
+          sb.setAttribute('stroke', m.selfStroke);
+          sb.setAttribute('stroke-width', m.selfSW);
+          const sl = document.getElementById('self-lbl');
+          sl.style.opacity = m.selfOp;
+          sl.querySelector('tspan:first-child').setAttribute('fill', m.lblFill);
+          const ss = document.getElementById('self-sub');
+          ss.setAttribute('fill', m.subFill);
+          ss.textContent = m.subTxt;
+          ['sp1','sp2','sp3'].forEach(id => document.getElementById(id).style.opacity = m.spokeOp);
+          ['b1','b2','b3'].forEach(id    => document.getElementById(id).style.opacity = m.beliefOp);
+          ['o1p','o2p','o3p'].forEach(id => document.getElementById(id).style.opacity = m.posOp);
+          ['o1n','o2n','o3n'].forEach(id => document.getElementById(id).style.opacity = m.negOp);
+          ['dl1p','dl2p','dl3p'].forEach(id => document.getElementById(id).style.opacity = m.dotPOp);
+          ['dl1n','dl2n','dl3n'].forEach(id => document.getElementById(id).style.opacity = m.dotNOp);
+          ['l1p','l2p','l3p'].forEach(id => document.getElementById(id).style.opacity = m.lblPOp);
+          ['l1n','l2n','l3n'].forEach(id => document.getElementById(id).style.opacity = m.lblNOp);
+          ['joy-ring','joy-lbl1','joy-lbl2','jd1','jd2','jd3'].forEach(id => {
+            document.getElementById(id).style.opacity = m.joyOp;
+          });
+        }
+        </script>
+
+        <div class="essay-nav">
+          <a href="/m4r7k9/essays/04-placeholder.html">← The Addiction Engine</a>
+          <a href="/m4r7k9/essays/05-the-curator.html">Next: The Curator →</a>
+        </div>
+      </main>
+      <footer>Written with the help of Claude. Authority comes from lived experience, not credentials.</footer>
+    </div>
+  </div>
+</body>
+</html>
